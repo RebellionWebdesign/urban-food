@@ -32,6 +32,8 @@ DEBUG = "DEBUG" in os.environ
 
 ALLOWED_HOSTS = [os.environ.get("DEV_URL"), os.environ.get("PROD_URL")]
 
+# Use custom user model
+AUTH_USER_MODEL = "user.User"
 
 # Application definition
 
