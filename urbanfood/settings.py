@@ -35,6 +35,18 @@ ALLOWED_HOSTS = [os.environ.get("DEV_URL"), os.environ.get("PROD_URL")]
 # Use custom user model
 AUTH_USER_MODEL = "user.User"
 
+#allauth settings
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+ACCOUNT_SESSION_REMEMBER = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,11 +55,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+	'django.contrib.sites',
+	'allauth',
+	'allauth.account',
+	'allauth.socialaccount',
     'django.contrib.staticfiles',
 	'user',
 ]
 
 MIDDLEWARE = [
+	'allauth.account.middleware.AccountMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
