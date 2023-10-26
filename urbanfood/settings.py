@@ -35,7 +35,14 @@ ALLOWED_HOSTS = [os.environ.get("DEV_URL"), os.environ.get("PROD_URL")]
 # Use custom user model
 AUTH_USER_MODEL = "user.User"
 
-#allauth settings
+#Allauth settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -46,6 +53,13 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_SESSION_REMEMBER = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+EMAIL_HOST = 'smtp.ionos.de'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'urbanfood@danielstauffer.dev'
+EMAIL_HOST_PASSWORD = 'kCy#^mjRPTYzG6t88$j!P$km*'
+EMAIL_USE_TLS = True
 
 # Application definition
 
