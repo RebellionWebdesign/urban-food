@@ -57,8 +57,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 EMAIL_HOST = 'smtp.ionos.de'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'urbanfood@danielstauffer.dev'
-EMAIL_HOST_PASSWORD = 'kCy#^mjRPTYzG6t88$j!P$km*'
+EMAIL_HOST_USER = os.environ.get("MAIL_ADDR")
+EMAIL_HOST_PASSWORD = os.environ.get("MAIL_PASS")
 EMAIL_USE_TLS = True
 
 # Application definition
