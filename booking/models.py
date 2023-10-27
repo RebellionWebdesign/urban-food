@@ -5,13 +5,18 @@ from table.models import Table
 class Booking(models.Model):
     number = models.IntegerField()
     first_name = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                   on_delete=models.CASCADE)
+                                   on_delete=models.CASCADE,
+                                   related_name='booking_fname')
     last_name = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                  on_delete=models.CASCADE)
+                                  on_delete=models.CASCADE,
+                                  related_name='booking_lname')
     email = models.ForeignKey(settings.AUTH_USER_MODEL,
-                              on_delete=models.CASCADE)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE)
-    persons = models.ForeignKey(Table, on_delete=models.CASCADE)
+                              on_delete=models.CASCADE,
+                              related_name='booking_email')
+    table = models.ForeignKey(Table, on_delete=models.CASCADE,
+                              related_name='booking_table')
+    persons = models.ForeignKey(Table, on_delete=models.CASCADE,
+                                related_name='booking_persons')
     date = models.DateField()
     time = models.TimeField()
     date_created = models.DateTimeField()
