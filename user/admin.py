@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 from .forms import SignupForm, ChangeForm
 from .models import User
 
-
+@admin.register(User)
 class CustomAdmin(UserAdmin):
     add_form = SignupForm
     form = ChangeForm
@@ -30,5 +30,3 @@ class CustomAdmin(UserAdmin):
     search_fields = ("email",)
     ordering = ("email",)
 
-
-admin.site.register(User, CustomAdmin)
