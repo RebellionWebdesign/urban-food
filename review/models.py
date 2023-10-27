@@ -10,11 +10,11 @@ class Review(models.Model):
     VERY_GOOD = 4
 
     RATE_CHOICES = (
-        (BAD, 1),
-        (MEDIOCRE, 2),
-        (OKAY, 3)
-        (GOOD, 4)
-        (VERY_GOOD, 5)
+        (BAD, '1'),
+        (MEDIOCRE, '2'),
+        (OKAY, '3'),
+        (GOOD, '4'),
+        (VERY_GOOD, '5'),
     )
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL,
