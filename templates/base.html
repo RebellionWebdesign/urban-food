@@ -1,16 +1,76 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URBAN FOOD</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1.0">
+    <meta name="description" content="urban Food is the best trash food restaurant in the city!">
+    <meta name="keywords" content="hamburger, cheeseburger, burrito, urban food, berlin, burrito, food, restaurant.">
+    <meta name="author" content="Daniel Stauffer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="assets/img/svg/favicon.svg">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>URBAN FOOD | Best trash food in the city!</title>
 </head>
 
 <body>
 
+{% comment %} RESPONSIVE HEADER START {% endcomment %}
+<header class="headerbar flex flex-center">
+    <div class="container flex flex-center-y">
+        <div class="column-50 flex flex-center-y flex-start">
+            <a href="index.html"
+                aria-label="the logo sends you back to the homepage">
+                <div class="logo-container flex flex-column flex-end ">
+                    <div class="logo-text-wrapper">
+                        <p>urban</p>
+                        <p>food</p>
+                    </div>
+                </div>
+            </a>
+            {% comment %} INSERT FONTAWESOME HERE [open icon] {% endcomment %}
+        </div>
+        <div class="column-50 flex flex-center-y flex-end hide">
+            {% comment %} INSERT FONTAWESOME HERE [close icon] {% endcomment %}
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" rel="noopener" target="_self"
+                            aria-label="this link sends you to the home page">HOME</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="noopener"
+                            target="_self" aria-label="this link sends you to the basics page">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="noopener"
+                            target="_self" aria-label="this link sends you to the materials page">MENU</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="noopener"
+                            target="_self" aria-label="this link sends you to the models page">REVIEWS</a>
+                    </li>
+                    <li>
+                        {% if user_is_authenticated %}
+                        <a href="#" rel="noopener"
+                            target="_self" aria-label="this link sends you to the help page">LOGOUT</a>
+                        {% else %}
+                        <a href="#" rel="noopener"
+                            target="_self" aria-label="this link sends you to the help page">LOGIN</a>
+                        {% endif %}
+                        
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+{% comment %} RESPONSIVE HEADER END {% endcomment %}
+
     <main>
-        <h1>THIS IS BASE HTML</h1>
         {% block content %}
         {% endblock %}
     </main>
