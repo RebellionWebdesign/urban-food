@@ -81,6 +81,7 @@ INSTALLED_APPS = [
 	'meal',
 	'table',
 	'booking',
+	'review',
 ]
 
 MIDDLEWARE = [
