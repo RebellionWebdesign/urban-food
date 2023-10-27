@@ -9,10 +9,7 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('table', '0001_initial'),
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
@@ -26,8 +23,6 @@ class Migration(migrations.Migration):
                 ('email', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='booking_email', to=settings.AUTH_USER_MODEL)),
                 ('first_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='booking_fname', to=settings.AUTH_USER_MODEL)),
                 ('last_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='booking_lname', to=settings.AUTH_USER_MODEL)),
-                ('persons', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='booking_persons', to='table.table')),
-                ('table', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='booking_table', to='table.table')),
             ],
         ),
     ]

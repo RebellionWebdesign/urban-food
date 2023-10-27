@@ -11,7 +11,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('booking', '0001_initial'),
-        ('table', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -26,8 +25,6 @@ class Migration(migrations.Migration):
                 ('email', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='staff_email', to=settings.AUTH_USER_MODEL)),
                 ('first_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='staff_fname', to=settings.AUTH_USER_MODEL)),
                 ('last_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='staff_lname', to=settings.AUTH_USER_MODEL)),
-                ('persons', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='staff_persons', to='table.table')),
-                ('table', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='staff_table', to='table.table')),
             ],
         ),
     ]

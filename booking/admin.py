@@ -5,7 +5,5 @@ from .models import Booking
 class PostAdmin(admin.ModelAdmin):
 
     list_filter = ('number', 'last_name', 'email')
-    list_display = ['number', 'last_name', 'email', 'table', 'persons', 'date',
-                    'time']
-    search_fields = ['number', 'last_name', 'email', 'table', 'persons',
-                     'date']
+    list_display = ['number', 'last_name', 'email', 'date', 'time']
+    search_fields = ['number', 'last_name', 'email', 'date']

@@ -80,7 +80,6 @@ INSTALLED_APPS = [
 	'django_summernote',
 	'user',
 	'meal',
-	'table',
 	'booking',
 	'review',
 	'staffarea',
