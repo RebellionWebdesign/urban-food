@@ -1,6 +1,6 @@
 from django.db import models
 
-class table(models.Model):
+class Table(models.Model):
     number = models.IntegerField()
     persons = models.IntegerField()
     max_persons = models.IntegerField()
