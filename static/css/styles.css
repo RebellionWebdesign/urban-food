@@ -1,0 +1,116 @@
+/* GLOBAL STYLES */
+
+/*CSSRoot is used for declaring the website colors as global variables.
+Declare them once and then use the variable name as value within the CSS.*/
+:root {
+    --color-primary: #DA0000;
+    --color-accent: #db6565;
+    --color-dark: #000000;
+    --color-light: #ffffff;
+    --color-shadow: rgba(0, 0, 0, 0.25);
+}
+
+/*The following sets all elements in the DOM to have no padding, no margin and the box-sizing.
+This includes the ::before and ::after pseudo-elements*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Here we set the HTML scroll behaviour to smooth scroll and the font size to 62.5% = 10px,
+this allows for easier calculations regarding the font size, paddings and margins*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*For the body we need to set the font size back to the default 16px - its the standard ssetting after all.
+But we can still calculate all other values based on the 62.5% we set earlier.*/
+body {
+    overflow-x: hidden;
+    /*disables horizontal scrolling*/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SECTIONS */
+.section {
+    width: 100vw;
+    height: auto;
+    padding: 50px 0px 50px 0px;
+}
+
+/* CONTAINERS */
+.container {
+    width: 85vw;
+}
+
+.column-50 {
+    width: 50%;
+}
+
+/* HEADERBAR STYLES [base.html] */
+.headerbar {
+    width: 100vw;
+    height: 8vh;
+    padding: 10px 0px 10px 0px;
+    background-color: var(--color-dark);
+    box-shadow: 0px 3px 3px var(--color-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo-container {
+    width: 115px;
+    height: 8vh;
+    background-color: var(--color-primary);
+    padding: 5px;
+}
+
+.logo-text-wrapper {
+    color: var(--color-light);
+    text-align: end;
+    font-size: 2rem;
+    line-height: 0.85;
+}
+
+/* FLEXBOX UTILS */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center-x {
+    justify-content: center;
+}
+
+.flex-center-y {
+    align-items: center;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/* VISIBILITY UTILS */
+.hide {
+    display: none;
+}
