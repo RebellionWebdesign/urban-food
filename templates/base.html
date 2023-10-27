@@ -11,6 +11,10 @@
     <meta name="keywords" content="hamburger, cheeseburger, burrito, urban food, berlin, burrito, food, restaurant.">
     <meta name="author" content="Daniel Stauffer">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    {% comment %} GOOGLE FONTS {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/img/svg/favicon.svg">
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <title>URBAN FOOD | Best trash food in the city!</title>
@@ -21,8 +25,8 @@
 {% comment %} RESPONSIVE HEADER START {% endcomment %}
 <header class="headerbar flex flex-center">
     <div class="container flex flex-center-y">
-        <div class="column-50 flex flex-center-y flex-start">
-            <a href="index.html"
+        <div class="column-100 flex flex-center-y flex-between">
+            <a href="#"
                 aria-label="the logo sends you back to the homepage">
                 <div class="logo-container flex flex-column flex-end ">
                     <div class="logo-text-wrapper">
@@ -31,10 +35,10 @@
                     </div>
                 </div>
             </a>
-            {% comment %} INSERT FONTAWESOME HERE [open icon] {% endcomment %}
+            <i class="fa-solid fa-bars fa-xl"></i>
         </div>
-        <div class="column-50 flex flex-center-y flex-end hide">
-            {% comment %} INSERT FONTAWESOME HERE [close icon] {% endcomment %}
+        <div class="column-50 column-50-mobile flex flex-center flex-column closed">
+            <i class="fa-solid fa-xmark fa-xl"></i>
             <nav>
                 <ul>
                     <li>
@@ -74,7 +78,11 @@
         {% block content %}
         {% endblock %}
     </main>
-
+    
+    {% comment %} FONT AWESOME KIT {% endcomment %}
+    <script src="https://kit.fontawesome.com/b4d3fe486a.js" crossorigin="anonymous"></script>
+    {% comment %} MOBILE MENU {% endcomment %}
+    <script src="{% static 'js/mobile.js' %}"></script>
 </body>
 
 </html>
