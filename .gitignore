@@ -3,3 +3,4 @@ __pycache__
 env.py
 *.sqlite3
 ~$$urban-food-final-erd.~vsdx
+*~lock~
