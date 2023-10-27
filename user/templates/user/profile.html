@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>THIS IS PROFILE HTML</h3>
+
+<img src="{{ user.image.url }}">
+<p>{{ user.email }}</p>
+<a href="{% url 'account_logout' %}">LOGOUT</a>
+
+
+{% endblock %}
