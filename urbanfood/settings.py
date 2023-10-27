@@ -44,7 +44,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/profile/'
 LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_REQUIRED = True
@@ -60,6 +60,7 @@ EMAIL_PORT = os.environ.get("MAIL_PORT")
 EMAIL_HOST_USER = os.environ.get("MAIL_ADDR")
 EMAIL_HOST_PASSWORD = os.environ.get("MAIL_PASS")
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_MAIL")
 
 # Application definition
 
@@ -84,6 +85,7 @@ INSTALLED_APPS = [
 	'review',
 	'staffarea',
 	'favourite',
+	'home',
 ]
 
 MIDDLEWARE = [
