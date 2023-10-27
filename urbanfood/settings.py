@@ -80,6 +80,7 @@ INSTALLED_APPS = [
 	'user',
 	'meal',
 	'table',
+	'booking',
 ]
 
 MIDDLEWARE = [
