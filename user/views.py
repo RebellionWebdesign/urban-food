@@ -13,7 +13,7 @@ class UserProfile(LoginRequiredMixin, DetailView):
     template_name = 'user/profile.html'
     context_object_name = 'user_profile'
 
-    def get(self, request, **kwargs):
+    def get(self, request):
         users = User.objects.all()
         context = {
             "users" : users,
