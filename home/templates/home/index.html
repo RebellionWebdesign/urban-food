@@ -31,11 +31,20 @@
 
     <section class="section review flex flex-center">
         <div class="container flex flex-center flex-column">
+            <h2 class="section-heading">WHAT CUSTOMERS SAY</h2>
             {% for review in reviews %}
                 <div class="review-container flex flex-center flex-column">
-                    <img class="review-image" src="{{ user.image.url }}" alt="{{ user.username }}">
-                    <h3 class="review-heading">{{ review.author }} {{ review.rate }}<i class="fa-solid fa-star"></i></h3>
-                    <p class="review-content">{{ review.content }}</p>
+                    <img class="review-image" 
+                         src="{{ user.image.url }}"
+                         alt="{{ user.username }}">
+                    <h3 class="review-heading">
+                        {{ review.author }}
+                        {{ review.rate }}
+                        <i class="fa-solid fa-star"></i>
+                    </h3>
+                    <p class="review-content">
+                        {{ review.content }}
+                    </p>
                 </div>
             {% endfor %}
             </div>
