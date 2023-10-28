@@ -8,8 +8,10 @@
             <h1>Best trash food in town!</h1>
             <p class="hero-text">please log in to book a table!</p>
             <div class="cta-wrapper flex">
-            <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
-            <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
+            <div class="cta-wrapper flex flex-between">
+                <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
+                <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
+            </div>
             </div>
         </container>
     </section>
@@ -35,12 +37,14 @@
             {% for review in reviews %}
                 <div class="review-container flex flex-center flex-column">
                     <img class="review-image" 
-                         src="{{ user.image.url }}"
-                         alt="{{ user.username }}">
-                    <h3 class="review-heading">
+                         src="{{ review.author.image.url }}"
+                         alt="{{ review.author.username }}">
+                    <h3 class="review-heading flex flex-between">
                         {{ review.author }}
+                        <div>
                         {{ review.rate }}
                         <i class="fa-solid fa-star"></i>
+                        </div>
                     </h3>
                     <p class="review-content">
                         {{ review.content }}
