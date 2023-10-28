@@ -24,5 +24,5 @@ class UserProfile(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user_profile'] = context['user_profile'].filter(user=self.request.user)
-
+        
         return context
