@@ -4,9 +4,9 @@
 {% block content %}
     <section class="section hero flex flex-center">
         <div class="container flex flex-center flex-column">
-            <p><span class="test">urban food</span> presents:</p>
+            <p class="hero-text">urban food presents:</p>
             <h1>Best trash food in town!</h1>
-            <p>please log in to book a table!</p>
+            <p class="hero-text">please log in to book a table!</p>
             <div class="cta-wrapper flex">
             <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
             <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
@@ -31,15 +31,14 @@
 
     <section class="section review flex flex-center">
         <div class="container flex flex-center flex-column">
-            <h2>WHAT CUTOMERS SAY</h2>
-            {% for user in users %}
-            <img src="{{ user.image.url }}" alt="{{ user.username }}">
+            {% for review in reviews %}
+                <div class="review-container flex flex-center flex-column">
+                    <img class="review-image" src="{{ user.image.url }}" alt="{{ user.username }}">
+                    <h3 class="review-heading">{{ review.author }} {{ review.rate }}<i class="fa-solid fa-star"></i></h3>
+                    <p class="review-content">{{ review.content }}</p>
+                </div>
             {% endfor %}
-            {% for review in reviews  %}
-            <div class="review-wrapper">
-                <h3>{{ review.content }}</h3>
             </div>
-            {% endfor %}
         </div>
     </section>
 {% endblock %}
