@@ -60,6 +60,9 @@
 
 ## CREDITS
 
+- The profile pictures for the fictive users were taken from [RandomUser](https://randomuser.me/photos)
+- The hardcoded images on the home page refer to cloudinary, but were shortened with [ShortUrl](https://www.shorturl.at/shortener.php)
+
 ### CONTENT
 
 ### MEDIA
