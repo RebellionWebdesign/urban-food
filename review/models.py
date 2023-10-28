@@ -1,5 +1,6 @@
 from django.db import models
-from django.conf import settings 
+from django.conf import settings
+from user.models import User
 
 class Review(models.Model):
 
@@ -11,7 +12,7 @@ class Review(models.Model):
         (4, '5'),
     )
 
-    author = models.ForeignKey(settings.AUTH_USER_MODEL,
+    author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                related_name='review_user')
     content = models.TextField()
