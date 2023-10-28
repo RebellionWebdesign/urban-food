@@ -103,14 +103,21 @@ body {
 
 .fa-bars {
     color: var(--color-light);
+    cursor: pointer;
 }
 
 .fa-xmark {
     color: var(--color-primary);
     height: 10%;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
 }
 
-/* HEADER BAR MOBILE STYLES */
+.fa-xmark:hover {
+    transform: scale(1.1);
+}
+
+/* HEADER BAR STYLES */
 
 .column-50-mobile {
     position: absolute;
@@ -138,6 +145,12 @@ nav ul li a {
     font-family: 'poppins', sans-serif;
     font-size: 1.5rem;
     color: var(--color-light);
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--color-accent);
 }
 
 .open {
@@ -146,6 +159,13 @@ nav ul li a {
 
 .closed {
     right: -50vw;
+}
+
+.menu-text {
+    color: var(--color-light);
+    margin-right: 15px;
+    font-family: 'gabarito', sans-serif;
+    font-weight: 700;
 }
 
 /* HERO SECTION */
@@ -199,6 +219,7 @@ nav ul li a {
     font-weight: 700;
     background-color: var(--color-primary);
     padding: 8px 16px 8px 16px;
+    transition: 0.25s ease-in-out;
 }
 
 .cta:hover {
