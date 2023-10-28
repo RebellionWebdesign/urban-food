@@ -11,7 +11,7 @@ from the parents to the children in this manner:
 Declare them once and then use the variable name as value within the CSS.*/
 :root {
     --color-primary: #DA0000;
-    --color-accent: #db6565;
+    --color-accent: #da3f3f;
     --color-dark: #000000;
     --color-light: #ffffff;
     --color-shadow: rgba(0, 0, 0, 0.25);
@@ -148,6 +148,104 @@ nav ul li a {
     right: -50vw;
 }
 
+/* HERO SECTION */
+.hero {
+    background: rgb(0,0,0);
+    background:
+    linear-gradient(90deg, rgba(0,0,0,0.65) 0%,
+                  rgba(0,0,0,0.65) 100%),
+                    url("https://shorturl.at/aopwK");
+    background-position: center center;
+    height: 80vh;
+}
+
+.container h1 {
+    width: 100%;
+    color: var(--color-light);
+    font-family: 'gabarito', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    /*this is calculated only for the hero
+    * the other paragraphs will be differently calculated.
+    */
+    font-size: 2rem;
+}
+
+.test {
+    font-family: 'gabarito', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+} 
+
+.container p {
+    width: 100%;
+    color: var(--color-light);
+    font-family: 'poppins', sans-serif;
+    /*this is calculated only for the hero
+    * the other paragraphs will be differently calculated.
+    */
+    font-size: 1.5rem;
+}
+
+.cta {
+    margin-top: 2rem;
+    width: 123px;
+    border-radius: 25px;
+    border: 2px solid var(--color-light);
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    padding: 8px 16px 8px 16px;
+}
+
+.cta:hover {
+    background-color: var(--color-accent);
+}
+
+/* ABOUT SECTION */
+.about {
+    width: 100vw;
+}
+
+.about h2 {
+    font-size: 1.375rem;
+    font-family: 'gabarito', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 0.75rem;
+    font-family: 'poppins', sans-serif;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.about img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.review {
+    background-color: var(--color-primary);
+}
+
+.review h2 {
+    color: var(--color-light);
+    font-size: 1.375rem;
+    font-family: 'gabarito', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px
+}
+
+/* REVIEWS SECTION */
+.review.wrapper {
+    width: 75%;
+}
+
 /* FLEXBOX UTILS */
 .flex {
     display: flex;
@@ -155,6 +253,10 @@ nav ul li a {
 
 .flex-between {
     justify-content: space-between;
+}
+
+.flex-around {
+    justify-content: space-around;
 }
 
 .flex-center {
