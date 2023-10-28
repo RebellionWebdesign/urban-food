@@ -61,7 +61,7 @@
                             target="_self" aria-label="this link sends you to the models page">REVIEWS</a>
                     </li>
                     <li>
-                        {% if user_is_authenticated %}
+                        {% if user.is_authenticated %}
                         <a href="{% url 'account_logout' %}" rel="noopener"
                             target="_self" aria-label="this link sends you to the help page">LOGOUT</a>
                         {% else %}
