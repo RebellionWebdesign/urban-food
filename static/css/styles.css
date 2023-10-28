@@ -205,6 +205,11 @@ nav ul li a {
     background-color: var(--color-accent);
 }
 
+.cta-wrapper {
+    width: 100%;
+    margin: 0px 30px 0px 30px;
+}
+
 /* ABOUT SECTION */
 .about {
     width: 100vw;
@@ -236,16 +241,18 @@ nav ul li a {
 
 .section-heading {
     color: var(--color-light);
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-family: 'gabarito', sans-serif;
 }
 
 .review-heading {
-    color: var(--color-light);
+    color: var(--color-dark);
     font-size: 1.375rem;
     font-family: 'gabarito', sans-serif;
     font-weight: 700;
-    margin-bottom: 20px
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    margin-top: 10px;
 }
 .review-container {
     width: 100%;
@@ -261,20 +268,46 @@ nav ul li a {
 
 .review-image {
     border-radius: 50%;
-}
-
-.review-heading {
-    color: var(--color-dark);
-    font-family: 'gabarito', sans-serif;
+    border: 8px solid var(--color-primary);
 }
 
 .review-content {
     color: var(--color-dark);
     font-family: 'poppins', sans-serif;
+    padding: 0px 10px 0px 10px;
+    text-align: start;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .fa-star {
     color: #ffc400;
+}
+
+.footer-text {
+    color: var(--color-light);
+    margin-left: 5px;
+    font-family: 'poppins', sans-serif;
+}
+
+/* FOOTER STYLES */
+
+footer {
+    width: 100vw;
+    height: 8vh;
+    padding: 10px 0px 10px 0px;
+    background-color: var(--color-dark);    
+}
+
+.fa-copyright {
+    color: var(--color-light);
+}
+
+.fa-facebook,
+.fa-instagram,
+.fa-whatsapp {
+    color: var(--color-light);
+    margin-left: 10px;
 }
 
 /* FLEXBOX UTILS */
