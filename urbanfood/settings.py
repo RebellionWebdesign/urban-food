@@ -55,11 +55,11 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-EMAIL_HOST = "TLS" in os.environ
+EMAIL_HOST = os.environ.get("SMTP")
 EMAIL_PORT = os.environ.get("MAIL_PORT")
 EMAIL_HOST_USER = os.environ.get("MAIL_ADDR")
 EMAIL_HOST_PASSWORD = os.environ.get("MAIL_PASS")
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = "TLS" in os.environ
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_MAIL")
 
 # Application definition
