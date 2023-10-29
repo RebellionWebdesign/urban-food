@@ -372,20 +372,44 @@ footer {
     border: 8px solid var(--color-primary);
 }
 
+.info-wrapper {
+margin-top: 40px;
+}
+
+.button-wrapper {
+    width: 100%;
+}
+
 .profile-info {
     width: 100%;
     color: var(--color-light);
     font-family: 'poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 16px;
+}
+
+.profile-cta {
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 25px;
+    border: 2px solid var(--color-light);
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    padding: 8px 16px 8px 16px;
+    transition: 0.25s ease-in-out;
+
 }
 
 .profile-greeter {
     width: 100%;
     color: var(--color-light);
     font-family: 'gabarito', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     margin-top: 15px;
 }
@@ -402,6 +426,47 @@ footer {
     margin-top: 5px;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* USER DELETE STYLES */
+.danger-section {
+    width: 100vw;
+    height: 92vh;
+    padding-top: 8vh;
+    background-color: var(--color-primary);
+}
+
+.danger-container {
+    background-color: var(--color-dark-lighter) ;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.danger-container h1 {
+    text-align: center;
+}
+
+.danger-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+    color: var(--color-light);
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.delete-button {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid var(--color-light);
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    text-align: center;
 }
 
 /* FLEXBOX UTILS */
