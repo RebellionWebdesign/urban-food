@@ -1,7 +1,7 @@
-from typing import Any
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import DetailView
-from django.shortcuts import render
+from django.contrib import messages
+from django.views.generic import DetailView, View
+from django.shortcuts import render, redirect
 from .models import User
 
 class BaseView(DetailView):
@@ -23,3 +23,17 @@ class UserProfile(LoginRequiredMixin, DetailView):
     
     def get_object(self, *args, **kwargs):
         return self.request.user
+
+class DeleteUserView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        return render(request, 'user/delete_user.html')
+    
+    def delete_user(request, id):
+        user = User.objects.get(id=id)
+
+        if request.method == 'POST':
+            user.delete()
+            messages.success(request, 'User deleted!')
+
+            return redirect('home')
