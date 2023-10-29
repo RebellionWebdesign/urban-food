@@ -29,8 +29,8 @@ class DeleteUserView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'user/delete_user.html')
     
-    def delete_user(request, id):
-        user = User.objects.get(id=id)
+    def post(self, request):
+        user = self.request.user
 
         if request.method == 'POST':
             user.delete()
