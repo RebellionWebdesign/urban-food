@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+    <section class="danger-section flex flex-center">
+    {% if user.is_authenticated %}
+    <div class="container danger-container flex flex-center flex-column">
+        <h1>CAUTION:<br>DANGER AREA!!!</h1>
+        <p>Do you really want to delete the user {{ user.first_name }}
+            {{ user.last_name }} ?<br><strong>THIS CAN NOT BE UNDONE!</strong></p>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <input class="delete-button" type="submit" value="YES, DELETE USER">
+        </form>
+    </div>
+    {% endif %}
+    </section>
+{% endblock %}
