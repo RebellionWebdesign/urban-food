@@ -21,8 +21,5 @@ class UserProfile(LoginRequiredMixin, DetailView):
 
         return render(request, 'user/profile.html', context)
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['user_profile'] = context['user_profile'].filter(user=self.request.user)
-        
-        return context
+    def get_object(self, *args, **kwargs):
+        return self.request.user
