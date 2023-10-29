@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section profile-section flex">
+    {% comment "for mobile first" %} THESE ARE FOR DESKTOP {% endcomment %}
+    <div class="sidebar flex flex-center flex-column hide">
+        <div class="side-container flex flex-center flex-between flex-column">
+        {% if user.is_authenticated %}
+                <div class="top-wrapper flex flex-center flex-column">
+                    <img class="profile-image"
+                         src="{{ user.image.url }}"
+                         alt="{{ user.username }}">
+                    <p class="profile-greeter">
+                        Hello, {{ user.first_name }} {{ user.last_name }}
+                    </p>
+                </div>
+
+            <div class="link-wrapper flex flex-center flex-column">
+                <a class="profile-link" href="#">MY BOOKINGS</a>
+                <a class="profile-link" href="#">MY REVIEWS</a>
+                <a class="profile-link" href="#"></a>
+            </div>
+
+            <a class="cta" href="{% url 'account_logout' %}" rel="noopener"
+            target="_self" aria-label="this link sends you to the help page">LOGOUT</a>
+        {% endif %}
+        </div>
+    </div>
+
+    {% comment "for mobile first" %} THESE ARE FOR MOBILE {% endcomment %}
+
+    <div class="profile-container flex flex-center flex-column">
+        {% if user.is_authenticated %}
+            <img class="profile-image"
+                 src="{{ user.image.url }}"
+                 alt="{{ user.username }}">
+            <p class="profile-greeter">
+                Hello, {{ user.first_name }} {{ user.last_name }}
+            </p>
+
+            <div class="info-wrapper">
+                <div-class="profile-info">{{ user.username }}</div>
+                <div-class="profile-info">{{ user.first_name }}</div>
+                <div-class="profile-info">{{ user.last_name }}</div>
+                <div-class="profile-info">{{ user.email }}</div>
+            </div>
+        {% endif %}
+    </div>
+
+</section>
+{% endblock %}
