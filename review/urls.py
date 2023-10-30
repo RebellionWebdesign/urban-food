@@ -1,6 +1,6 @@
-from .views import ReviewView
+from .views import UserProfileReview
 from django.urls import path
 
-#urlpatterns = [
-#    path('', ReviewView.as_view(), name = 'home_review'),
-#]
+urlpatterns = [
+    path('', UserProfileReview.as_view(), name = 'user_reviews'),
+]
