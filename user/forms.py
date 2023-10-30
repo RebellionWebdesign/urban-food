@@ -15,3 +15,9 @@ class ChangeForm(UserChangeForm):
     class Meta:
         model = User
         fields = ("email",)
+
+class ChangeUserForm(UserChangeForm):
+    
+    class Meta:
+        model = User
+        fields = ('image', 'username', 'first_name', 'last_name')
