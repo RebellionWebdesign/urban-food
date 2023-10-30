@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.views.generic import DetailView, View
 from django.shortcuts import render, redirect
+from .forms import ChangeUserForm
 from .models import User
 
 class BaseView(DetailView):
@@ -37,3 +38,9 @@ class DeleteUserView(LoginRequiredMixin, View):
             messages.success(request, 'User deleted!')
 
             return redirect('home')
+
+class ChangeUserView(LoginRequiredMixin, View):
+    def get (self, request):
+        change_form = ChangeUserForm(request.POST, instance=request.user)
+
+        return render(request, 'user/change_user.html', {'change_form':change_form})
