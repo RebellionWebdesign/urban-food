@@ -1,17 +1,25 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
   <section class="update-section flex flex-center">
     <div class="update-container flex flex-start flex-column">
       {% if user.is_authenticated %}
+      <form method="post">
         {% csrf_token %}
         <tr>
           <th>
-            <label class="update-labels" for="id_image">Image:</label>
+            <label class="update-labels" for="id_image">Your Image:</label>
           </th>
           <td>
-            <div class="update-image flex flex-center-y flex-between">
-              <p>Currently:</p>
+            <div class="update-marker flex flex-center-y flex-between">
+              <p class="update-marker">Currently:</p>
               {% if 'placeholder' in user.image.url %}
                 <img class="profile-image"
                      src="https://shorturl.at/gpvGN"
@@ -22,22 +30,26 @@
                      alt="{{ user.username }}">
                 {% endif %}
             </div>
-            <p>Change:</p>
+            <p class="update-marker update-labels margin-l-top">Change your Image:</p>
             <input class="update-labels" type="file" name="image" id="id_image">
           </td>
         </tr>
         <tr>
           <th>
-            <label class="update-labels" for="id_username">Username:</label>
+            <label class="flex flex-between margin-s-top margin-l-top update-labels" for="id_username">
+              <p>Change your Username:</p><p><i>( {{ user.username }} )</i></p> 
+            </label>
           </th>
           <td>
             <input class="update-labels" type="text" name="username" maxlength="150" id="id_username">
           </td>
         </tr>
         <tr>
-          <th>
-            <label class="update-labels" for="id_first_name">First name:</label>
-          </th>
+          <td>
+            <label class="flex flex-between margin-s-top update-labels" for="id_first_name">
+              <p>Change your First name:</p><p><i>( {{ user.first_name }} )</i></p>
+            </label>
+          </td>
           <td>
             <ul class="errorlist">
               <li>This field is required.</li>
@@ -51,7 +63,9 @@
         </tr>
         <tr>
           <th>
-            <label class="update-labels" for="id_last_name">Last name:</label>
+            <label class="flex flex-between margin-s-top update-labels" for="id_last_name">
+              <p>Change your Last name:</p><p><i>( {{ user.last_name }} )</i></p>
+            </label>
           </th>
           <td>
             <ul class="errorlist">
@@ -59,24 +73,23 @@
             </ul>
             <input type="text"
                    name="last_name"
-                    maxlength="150"
+                   maxlength="150"
                    required
                    id="id_last_name">
           </td>
         </tr>
         <tr>
           <th>
-            <label class="update-labels" for="id_password">Password:</label>
+            <input class="change-button" type="submit" value="YES, CHANGE USER">
+          </form>
+            <span class="helptext flex flex-center">
+              Please use 
+                <a class="password-link" href="{../password/}">this form</a> 
+                to perform a password change.
+            </span>
           </th>
-          <td>
-            <div disabled id="id_password">
-              <strong>No password set.</strong>
-            </div>
-            <br>
-            <span class="helptext">Raw passwords are not stored, so there is no way to see this user’s password, but you can change the password using <a href="../password/">this form</a>.</span>
-          </td>
         </tr>
       {% endif %}
     </div>
   </section>
-{% endblock %}
+{% endblock content %}
