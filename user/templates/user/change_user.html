@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <section class="update-section flex flex-center">
+    <div class="update-container flex flex-start flex-column">
+      {% if user.is_authenticated %}
+        {% csrf_token %}
+        <tr>
+          <th>
+            <label class="update-labels" for="id_image">Image:</label>
+          </th>
+          <td>
+            <div class="update-image flex flex-center-y flex-between">
+              <p>Currently:</p>
+              {% if 'placeholder' in user.image.url %}
+                <img class="profile-image"
+                     src="https://shorturl.at/gpvGN"
+                     alt="default image">
+                {% else %}
+                <img class="profile-image"
+                     src="{{ user.image.url }}"
+                     alt="{{ user.username }}">
+                {% endif %}
+            </div>
+            <p>Change:</p>
+            <input class="update-labels" type="file" name="image" id="id_image">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label class="update-labels" for="id_username">Username:</label>
+          </th>
+          <td>
+            <input class="update-labels" type="text" name="username" maxlength="150" id="id_username">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label class="update-labels" for="id_first_name">First name:</label>
+          </th>
+          <td>
+            <ul class="errorlist">
+              <li>This field is required.</li>
+            </ul>
+            <input type="text"
+                   name="first_name"
+                   maxlength="150"
+                   required
+                   id="id_first_name">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label class="update-labels" for="id_last_name">Last name:</label>
+          </th>
+          <td>
+            <ul class="errorlist">
+              <li>This field is required.</li>
+            </ul>
+            <input type="text"
+                   name="last_name"
+                    maxlength="150"
+                   required
+                   id="id_last_name">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label class="update-labels" for="id_password">Password:</label>
+          </th>
+          <td>
+            <div disabled id="id_password">
+              <strong>No password set.</strong>
+            </div>
+            <br>
+            <span class="helptext">Raw passwords are not stored, so there is no way to see this user’s password, but you can change the password using <a href="../password/">this form</a>.</span>
+          </td>
+        </tr>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
