@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core import validators
 from django.contrib import messages
 from django.views.generic import DetailView, View
 from django.shortcuts import render, redirect
@@ -43,4 +44,13 @@ class ChangeUserView(LoginRequiredMixin, View):
     def get (self, request):
         change_form = ChangeUserForm(request.POST, instance=request.user)
 
-        return render(request, 'user/change_user.html', {'change_form':change_form})
+        return render(request, 'user/change_user.html',
+                      {'change_form':change_form})
+    
+    def post(self, request):
+        change_form = ChangeUserForm(request.POST, instance=request.user)
+
+        if request.method == 'POST':
+            change_form.save()
+            return redirect('user_profile')
+        
