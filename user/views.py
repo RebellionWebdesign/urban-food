@@ -6,10 +6,12 @@ from django.shortcuts import render, redirect
 from .forms import ChangeUserForm
 from .models import User
 
+
 class BaseView(DetailView):
 
     def get(self, request):
         return render(request, 'base.html')
+
 
 class UserProfile(LoginRequiredMixin, DetailView):
     template_name = 'user/profile.html'
@@ -18,19 +20,20 @@ class UserProfile(LoginRequiredMixin, DetailView):
     def get(self, request):
         users = User.objects.all()
         context = {
-            "users" : users,
+            "users": users,
         }
 
         return render(request, 'user/profile.html', context)
-    
+
     def get_object(self, *args, **kwargs):
         return self.request.user
+
 
 class DeleteUserView(LoginRequiredMixin, View):
 
     def get(self, request):
         return render(request, 'user/delete_user.html')
-    
+
     def post(self, request):
         user = self.request.user
 
@@ -40,17 +43,17 @@ class DeleteUserView(LoginRequiredMixin, View):
 
             return redirect('home')
 
+
 class ChangeUserView(LoginRequiredMixin, View):
-    def get (self, request):
+    def get(self, request):
         change_form = ChangeUserForm(request.POST, instance=request.user)
 
         return render(request, 'user/change_user.html',
-                      {'change_form':change_form})
-    
+                      {'change_form': change_form})
+
     def post(self, request):
         change_form = ChangeUserForm(request.POST, instance=request.user)
 
         if request.method == 'POST':
             change_form.save()
             return redirect('user_profile')
-        
