@@ -118,6 +118,16 @@ body {
     transform: scale(1.1);
 }
 
+.user-menu {
+    background-color: var(--color-primary);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.user-menu li a:hover {
+    color: var(--color-dark);
+}
+
 /* HEADER BAR STYLES */
 
 .column-50-mobile {
@@ -171,11 +181,11 @@ nav ul li a:hover {
 
 /* HERO SECTION */
 .hero {
-    background: rgb(0,0,0);
+    background: rgb(0, 0, 0);
     background:
-    linear-gradient(90deg, rgba(0,0,0,0.65) 0%,
-                  rgba(0,0,0,0.65) 100%),
-                    url("https://shorturl.at/aopwK");
+        linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.65) 100%),
+        url("https://shorturl.at/aopwK");
     background-position: center center;
     height: 80vh;
 }
@@ -196,7 +206,7 @@ nav ul li a:hover {
     font-family: 'gabarito', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
-} 
+}
 
 .hero-text {
     width: 100%;
@@ -276,6 +286,7 @@ nav ul li a:hover {
     padding: 0px 10px 0px 10px;
     margin-top: 10px;
 }
+
 .review-container {
     width: 100%;
     background-color: var(--color-light);
@@ -318,7 +329,7 @@ footer {
     width: 100vw;
     height: 8vh;
     padding: 10px 0px 10px 0px;
-    background-color: var(--color-dark);    
+    background-color: var(--color-dark);
 }
 
 .fa-copyright {
@@ -373,7 +384,7 @@ footer {
 }
 
 .info-wrapper {
-margin-top: 40px;
+    margin-top: 40px;
 }
 
 .button-wrapper {
@@ -418,7 +429,7 @@ margin-top: 40px;
     width: 100%;
 }
 
-.profile-link{
+.profile-link {
     width: 100%;
     color: var(--color-light);
     font-family: 'gabarito', sans-serif;
@@ -437,7 +448,7 @@ margin-top: 40px;
 }
 
 .danger-container {
-    background-color: var(--color-dark-lighter) ;
+    background-color: var(--color-dark-lighter);
     padding: 10px;
     border-radius: 10px;
 }
@@ -518,7 +529,7 @@ input[type=text] {
     font-size: 12px;
 }
 
-.profile-button{
+.profile-button {
     margin-top: -5px;
     width: 100%;
     margin-bottom: 5px;
@@ -600,9 +611,8 @@ input[type=text] {
 
 @media screen and (max-width: 762px) and (orientation: portrait) {}
 
-@media screen and (max-width: 762px) and (orientation: landscape)  {}
+@media screen and (max-width: 762px) and (orientation: landscape) {}
 
 @media screen and (max-width: 576px) {}
 
 @media screen and (max-width: 378px) {}
-
