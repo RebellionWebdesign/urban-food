@@ -1,5 +1,4 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core import validators
 from django.contrib import messages
 from django.views.generic import DetailView, View
 from django.shortcuts import render, redirect
