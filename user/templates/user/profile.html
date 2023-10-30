@@ -8,9 +8,15 @@
         <div class="side-container flex flex-center flex-between flex-column">
         {% if user.is_authenticated %}
                 <div class="top-wrapper flex flex-center flex-column">
+                    {% if 'placeholder' in user.image.url %}
+                    <img class="profile-image"
+                         src="https://shorturl.at/gpvGN"
+                         alt="default image">
+                    {% else %}
                     <img class="profile-image"
                          src="{{ user.image.url }}"
                          alt="{{ user.username }}">
+                    {% endif %}
                     <p class="profile-greeter">
                         Hello, {{ user.first_name }} {{ user.last_name }}
                     </p>
@@ -33,25 +39,41 @@
     <div class="profile-container flex flex-center flex-column">
         {% if user.is_authenticated %}
         <div class="container flex flex-center flex-column">
-            <img class="profile-image"
-                 src="{{ user.image.url }}"
-                 alt="{{ user.username }}">
+            {% if 'placeholder' in user.image.url %}
+                    <img class="profile-image"
+                         src="https://shorturl.at/gpvGN"
+                         alt="default image">
+                    {% else %}
+                    <img class="profile-image"
+                         src="{{ user.image.url }}"
+                         alt="{{ user.username }}">
+                    {% endif %}
             <p class="profile-greeter">
                 Hello, <strong>{{ user.first_name }} {{ user.last_name }},</strong>
                 <br>this is your user info:
             </p>
 
             <div class="info-wrapper">
-                <div class="profile-info">USERNAME:<br>{{ user.username }}</div>
-                <div class="profile-info">FIRST NAME, LAST NAME:<br>{{ user.first_name }} {{ user.last_name }}</div>
-                <div class="profile-info">EMAIL:<br>{{ user.email }}</div>
+                <div class="profile-info">
+                    USERNAME:<br>{{ user.username }}</div>
+                <div class="profile-info">
+                    FIRST NAME, LAST NAME:<br>{{ user.first_name }} {{ user.last_name }}
+                </div>
+                <div class="profile-info">
+                    EMAIL:<br>{{ user.email }}
+                </div>
             </div>
 
             <div class="button-wrapper flex flex-center flex-column">
-                <a class="profile-cta" href="{% url 'account_logout' %}" rel="noopener"
-                    target="_self" aria-label="this link sends you to the help page">EDIT INFO</a>
-                <a class="profile-cta" href="{% url 'user_delete' %}" rel="noopener"
-                    target="_self" aria-label="this link sends you to the help page">DELETE ACCOUNT</a>
+                <a class="profile-cta" href="{% url 'user_change' %}" rel="noopener"
+                    target="_self" 
+                    aria-label="this link sends you to the help page">EDIT INFO
+                </a>
+                <a class="profile-cta" href="{% url 'user_delete' %}" 
+                    rel="noopener"
+                    target="_self" 
+                    aria-label="this link sends you to the help page">DELETE ACCOUNT
+                </a>
             </div>
         </div>
         {% endif %}
