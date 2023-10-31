@@ -30,7 +30,7 @@
                         </p>
                         <div class="button-wrapper margin-l-top flex flex-wrap flex-between flex-center">
                             <a class="edit-review-btn cta">EDIT REVIEW</a>
-                            <a class="delete-review-btn cta">DELETE REVIEW</a>
+                            <a id="{{ review.id }}" href="{% url 'delete_review' | review.id %}" class="delete-review-btn cta">DELETE REVIEW</a>
                         </div>
                     </div>
                 {% endfor %}
