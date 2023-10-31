@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import DetailView, View
 from .models import Review
 from .forms import NewReviewForm
+from user.models import User
 
 class ReviewView(DetailView):
 
@@ -46,3 +47,14 @@ class NewReview(LoginRequiredMixin, View):
                 new_review.save()
 
         return redirect('user_reviews')
+    
+class DeleteReview(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'review/delete_review.html')
+    
+    def post(self, request):
+        review = Review.objects.values_list('id', flat=True)
+
+        if request.method == 'POST':
+            review.delete()
+            return redirect('user_reviews')
