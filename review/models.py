@@ -19,6 +19,7 @@ class Review(models.Model):
     rate = models.IntegerField(choices=RATE_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateField(auto_now=True)
+    delete = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.author)
