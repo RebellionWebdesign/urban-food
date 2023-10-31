@@ -3,13 +3,13 @@ from django.conf import settings
 from user.models import User
 
 class Review(models.Model):
-
     RATE_CHOICES = (
-        (0, '1'),
-        (1, '2'),
-        (2, '3'),
-        (3, '4'),
-        (4, '5'),
+
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
     )
 
     author = models.ForeignKey(User,
