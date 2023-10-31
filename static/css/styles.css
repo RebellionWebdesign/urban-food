@@ -323,6 +323,26 @@ nav ul li a:hover {
     font-family: 'poppins', sans-serif;
 }
 
+/* USER REVIEWS [MY_REVIEWS.HTML] */
+.user-review-section {
+    padding-top: 8vh;
+    width: 100vw;
+    background-color: var(--color-dark-lighter);
+    text-align: center;
+}
+
+.review-wrapper {
+    width: 100%;
+    background-color: var(--color-light);
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'poppins', sans-serif;
+}
+
+.new-review-btn {
+    width: 100%;
+}
+
 /* FOOTER STYLES */
 
 footer {
@@ -587,6 +607,10 @@ input[type=text] {
 
 .flex-column {
     flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
 }
 
 /* SPACING UTILS */
