@@ -24,7 +24,7 @@ class UserProfile(LoginRequiredMixin, DetailView):
 
         return render(request, 'user/profile.html', context)
 
-    def get_object(self, *args, **kwargs):
+    def get_object(self):
         return self.request.user
 
 
@@ -45,7 +45,7 @@ class DeleteUserView(LoginRequiredMixin, View):
 
 class ChangeUserView(LoginRequiredMixin, View):
     def get(self, request):
-        change_form = ChangeUserForm(request.POST, instance=request.user)
+        change_form = ChangeUserForm(instance=request.user)
 
         return render(request, 'user/change_user.html',
                       {'change_form': change_form})
@@ -54,5 +54,6 @@ class ChangeUserView(LoginRequiredMixin, View):
         change_form = ChangeUserForm(request.POST, instance=request.user)
 
         if request.method == 'POST':
-            change_form.save()
-            return redirect('user_profile')
+            if change_form.is_valid():
+                change_form.save()
+                return redirect('user_profile')
