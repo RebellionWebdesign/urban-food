@@ -7,7 +7,7 @@ from user.models import User
 class HomeView(View):
 
     def get(self, request):
-        reviews = Review.objects.all()
+        reviews = Review.objects.all().order_by('-rate')
         users = User.objects.all()
         context = {
             "reviews" : reviews,
