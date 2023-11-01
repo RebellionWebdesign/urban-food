@@ -52,8 +52,8 @@
 ### PYTHON PACKAGES
 
 - To further ensure that the [djlint-vscode](https://marketplace.visualstudio.com/items?itemName=monosans.djlint) extension also works, the following
-  Python package was used: [djlint](https://pypi.org/project/djlint/)
-    - 
+  Python package was used: 
+    - [djlint](https://pypi.org/project/djlint/)
 
 ## TESTING
 
