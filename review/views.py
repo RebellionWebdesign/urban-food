@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import DetailView, View
 from .models import Review
-from .forms import NewReviewForm
+from .forms import NewReviewForm, EditReviewForm
 
 class ReviewView(DetailView):
 
@@ -61,4 +61,24 @@ class DeleteReview(LoginRequiredMixin, View):
         review = get_object_or_404(Review, pk=pk)
         review.delete()
         return redirect('user_reviews')
-        
+
+
+class UpdateReview(LoginRequiredMixin, View):
+    def get(self, request, pk):
+        """Receive review update form"""
+        update_form = EditReviewForm(data=request.POST, instance=request.user)
+        review = get_object_or_404(Review, pk=pk)
+        return render(
+            request,
+            'review/update_review.html',
+            {'review': review,
+             'update_form': update_form}
+        )
+
+    def post(self, request, pk):
+        update_review = get_object_or_404(Review, pk=pk)
+        update_form = EditReviewForm(data=request.POST, instance=update_review)
+        if update_form.is_valid():
+            update_review.save()
+        return redirect('user_reviews')
+    
