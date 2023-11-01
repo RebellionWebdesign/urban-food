@@ -17,4 +17,5 @@ class Booking(models.Model):
     date_created = models.DateTimeField()
 
     def __str__(self):
-        return self.number + ", " + self.last_name
+        return "TEST"
+#self.number + " | " + 
