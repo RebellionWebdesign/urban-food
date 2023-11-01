@@ -32,10 +32,16 @@
                 <h2 id="review" name="review" class="section-heading">WHAT CUSTOMERS SAY</h2>
                 {% for review in reviews %}
                     <div class="review-container flex flex-center flex-column">
+                        {% if 'placeholder' in user.image.url %}
+                        <img class="review-image"
+                             src="https://shorturl.at/gpvGN"
+                             alt="default image">
+                        {% else %}
                         <img class="review-image"
                              src="{{ review.author.image.url }}"
                              alt="{{ review.author.username }}">
                         <h3 class="review-heading flex flex-between">
+                        {% endif %}
                             {{ review.author }}
                             <div>
                                 {{ review.rate }}

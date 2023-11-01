@@ -302,6 +302,7 @@ nav ul li a:hover {
 .review-image {
     border-radius: 50%;
     border: 8px solid var(--color-primary);
+    width: 25%;
 }
 
 .review-content {
