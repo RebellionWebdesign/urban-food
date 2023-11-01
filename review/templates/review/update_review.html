@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-
 {% block content %}
     <section class="section user-review-section flex flex-center">
         {% if user.is_authenticated %}
@@ -11,13 +10,11 @@
                     <br>
                     Please update your review below:
                 </h1>
-                    
-                    <form method="POST">
+                <form method="POST">
                     {% csrf_token %}
                     {{ update_form.as_p }}
                     <input class="change-button" type="submit" value="UPDATE REVIEW">
-                    </form>
-
+                </form>
             </div>
         {% endif %}
     </section>
