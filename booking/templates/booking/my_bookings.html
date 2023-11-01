@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <section id="#top" class="section user-review-section flex flex-center">
+        {% if user.is_authenticated %}
+            <div class="container flex flex-center flex-column">
+                <h1 class="review-greeter">
+                    Hey, {{ user.first_name }} {{ user.last_name }}!
+                    <br>
+                    These are your past bookings:
+                </h1>
+                {% comment %} Add this back when done: href="{% url 'new_booking' %}" {% endcomment %}
+                <a href="{% url 'new_booking' %}" class="new-review-btn cta">
+                    NEW BOOKING
+                </a>
+                {% for booking in bookings %}
+                    <div class="bookings review-container margin-l-top flex-column
+                                flex-center flex-between">
+                        <div class="booking-data">
+                            <p>Booking Number: {{ booking.number }}</p>
+                        </div>
+                        <div class="booking-data">
+                            <p>Name: {{ booking.first_name.first_name }} 
+                                {{ booking.last_name }}</p>
+                        </div>
+                        <div class="booking-data">
+                            <p>Mail Address: {{ booking.email.email }}</p>
+                        </div>
+                        <div class="booking-data">
+                            <p>Booking Date: {{ booking.date }}</p>
+                        </div>
+                        <div class="booking-data">
+                            <p>Booking Time: {{ booking.time }}</p>
+                        </div>
+                        <div class="booking-data">
+                            <p>Booked on: {{ booking.date_created }}</p>
+                        </div>
+                        <a href="{% url 'delete_booking' pk=booking.pk %}" class="booking-cancel-button">DELETE</a>
+                    </div>
+                {% endfor %}
+                <a href="#top" class="new-review-btn cta">
+                    BACK TO TOP 
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        {% endif %}
+    </section>
+{% endblock content %}
