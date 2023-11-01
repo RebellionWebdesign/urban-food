@@ -47,9 +47,13 @@
 ## TOOLS USED
 
 - To ensure that the django templates are formatted correctly, the following [VSCode](https://code.visualstudio.com/) extension was used:
-    - [djlint](https://marketplace.visualstudio.com/items?itemName=monosans.djlint)
+    - [djlint-vscode](https://marketplace.visualstudio.com/items?itemName=monosans.djlint)
 
 ### PYTHON PACKAGES
+
+- To further ensure that the [djlint-vscode](https://marketplace.visualstudio.com/items?itemName=monosans.djlint) extension also works, the following
+  Python package was used: [djlint](https://pypi.org/project/djlint/)
+    - 
 
 ## TESTING
 
