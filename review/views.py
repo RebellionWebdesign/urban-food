@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import DetailView, View
 from .models import Review
 from .forms import NewReviewForm
@@ -48,9 +48,17 @@ class NewReview(LoginRequiredMixin, View):
         return redirect('user_reviews')
     
 class DeleteReview(LoginRequiredMixin, View):
-    def get(self, request):
-        return render(request, 'review/delete_review.html')
-    
-    def post(self, request):
-        delete_box = request.POST.getlist('delete-review')
+    def get(self, request, pk):
+        """Receive review delete form"""
+        review = get_object_or_404(Review, pk=pk)
+        return render(
+            request,
+            'review/delete_review.html',
+            {'review': review}
+        )
+
+    def post(self, request, pk):
+        review = get_object_or_404(Review, pk=pk)
+        review.delete()
+        return redirect('user_reviews')
         
