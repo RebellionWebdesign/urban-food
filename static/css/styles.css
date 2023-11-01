@@ -243,6 +243,7 @@ nav ul li a:hover {
 }
 
 /* ABOUT SECTION */
+
 .about {
     width: 100vw;
 }
@@ -326,6 +327,7 @@ nav ul li a:hover {
 
 /* USER REVIEWS [MY_REVIEWS.HTML] */
 .user-review-section {
+    min-height: 92vh;
     padding-top: 8vh;
     width: 100vw;
     background-color: var(--color-dark-lighter);
