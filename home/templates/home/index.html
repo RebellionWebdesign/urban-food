@@ -6,21 +6,21 @@
             <p class="hero-text">urban food presents:</p>
             <h1>Best trash food in town!</h1>
             {% if user.is_authenticated %}
-            <p class="hero-text hide">please log in to book a table!</p>
+                <p class="hero-text hide">please log in to book a table!</p>
             {% else %}
-            <p class="hero-text">please log in to book a table!</p>
+                <p class="hero-text">please log in to book a table!</p>
             {% endif %}
             {% if user.is_authenticated %}
-            <div class="cta-wrapper flex hide">
-                <div class="cta-wrapper flex flex-between">
-                    <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
-                    <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
-                </div>
+                <div class="cta-wrapper flex hide">
+                    <div class="cta-wrapper flex flex-between">
+                        <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
+                        <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
+                    </div>
                 {% else %}
-                <div class="cta-wrapper flex flex-between">
-                    <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
-                    <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
-                </div>
+                    <div class="cta-wrapper flex flex-between">
+                        <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
+                        <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
+                    </div>
                 {% endif %}
             </div>
         </section>
@@ -44,15 +44,15 @@
                 {% for review in reviews %}
                     <div class="review-container flex flex-center flex-column">
                         {% if 'placeholder' in user.image.url %}
-                        <img class="review-image"
-                             src="https://shorturl.at/gpvGN"
-                             alt="default image">
+                            <img class="review-image"
+                                 src="https://shorturl.at/gpvGN"
+                                 alt="default image">
                         {% else %}
-                        <img class="review-image"
-                             src="{{ review.author.image.url }}"
-                             alt="{{ review.author.username }}">
-                        <h3 class="review-heading flex flex-between">
-                        {% endif %}
+                            <img class="review-image"
+                                 src="{{ review.author.image.url }}"
+                                 alt="{{ review.author.username }}">
+                            <h3 class="review-heading flex flex-between">
+                            {% endif %}
                             {{ review.author }}
                             <div>
                                 {{ review.rate }}
