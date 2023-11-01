@@ -1,3 +1,5 @@
+![urban-food-readme-header](docs/images/readme-images/urban-food-readme-header.png)
+
 ## TABLE OF CONTENTS
 
 ## OVERVIEW
