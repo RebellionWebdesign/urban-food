@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <section class="section user-review-section flex flex-center">
+    <section id="#top" class="section user-review-section flex flex-center">
         {% if user.is_authenticated %}
             <div class="container flex flex-center flex-column">
                 <h1 class="review-greeter">
@@ -26,14 +26,19 @@
                             <strong>Last modified:</strong>{{ review.last_modified }}
                         </p>
                         <p class="margin-s-top">
-                            <strong>Rate:</strong>{{ review.rate }}
+                            <strong>Rate: </strong>{{ review.rate }}
                         </p>
-                        <div class="button-wrapper margin-l-top flex flex-wrap flex-between flex-center">
-                            <a id="{{ review.id }}" href="{% url 'delete_review' pk=review.pk %}" class="delete-review-btn cta">DELETE REVIEW</a>
+                        <div class="button-wrapper flex">
+                            <div class="button-wrapper margin-l-top flex flex-wrap flex-between flex-center">
+                                <a id="{{ review.id }}" href="{% url 'update_review' pk=review.pk %}" class="delete-review-btn cta">UPDATE REVIEW</a>
+                            </div>
+                            <div class="button-wrapper margin-l-top flex flex-wrap flex-between flex-center">
+                                <a id="{{ review.id }}" href="{% url 'delete_review' pk=review.pk %}" class="delete-review-btn cta">DELETE REVIEW</a>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
-                <a class="new-review-btn cta">NEW REVIEW</a>
+                <a href="#top" class="new-review-btn cta">BACK TO TOP <i class="fa-solid fa-arrow-up"></i></a>
             </div>
         {% endif %}
     </section>
