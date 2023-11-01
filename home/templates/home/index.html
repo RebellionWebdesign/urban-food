@@ -5,12 +5,23 @@
         <div class="container flex flex-center flex-column">
             <p class="hero-text">urban food presents:</p>
             <h1>Best trash food in town!</h1>
+            {% if user.is_authenticated %}
+            <p class="hero-text hide">please log in to book a table!</p>
+            {% else %}
             <p class="hero-text">please log in to book a table!</p>
-            <div class="cta-wrapper flex">
+            {% endif %}
+            {% if user.is_authenticated %}
+            <div class="cta-wrapper flex hide">
                 <div class="cta-wrapper flex flex-between">
                     <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
                     <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
                 </div>
+                {% else %}
+                <div class="cta-wrapper flex flex-between">
+                    <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
+                    <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
+                </div>
+                {% endif %}
             </div>
         </section>
         <section class="section about flex flex-center">
