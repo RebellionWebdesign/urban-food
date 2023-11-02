@@ -8,11 +8,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     """
     The User class is a custom class written for the project.
     """
-    image = CloudinaryField("image", null=True, blank=True, default = "placeholder")
+    image = CloudinaryField("image", null=True, blank=True, default="placeholder")
     username = models.CharField(max_length=150, unique=True, null=True,
                                 blank=True)
-    first_name = models.CharField(max_length=150)
-    last_name = models.CharField(max_length=150)
+    first_name = models.CharField(max_length=150, null=True, blank=True)
+    last_name = models.CharField(max_length=150, null=True, blank=True)
     email = models.EmailField(unique=True)
     date_joined = models.DateTimeField(auto_now_add=True)
     last_changed = models.DateTimeField(auto_now=True)
