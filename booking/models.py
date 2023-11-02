@@ -14,8 +14,7 @@ class Booking(models.Model):
                               related_name='booking_email')
     date = models.DateField()
     time = models.TimeField()
-    date_created = models.DateTimeField()
+    date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "TEST"
-#self.number + " | " + 
+        return str(self.number) + " | " + str(self.last_name)
