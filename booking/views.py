@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import DetailView, View
+from django.views.generic import View
 from .models import Booking
 from .forms import NewBookingForm
 
@@ -32,7 +32,7 @@ class NewBooking(LoginRequiredMixin, View):
                                           instance=request.user)
         if booking_form.is_valid():
             bookings = Booking.objects.filter(email=request.user).order_by('-number')
-            number =  len(bookings)+1
+            number = len(bookings)+1
             first_name = self.request.user
             last_name = self.request.user
             email = self.request.user
