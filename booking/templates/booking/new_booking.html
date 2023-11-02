@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+#{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <section class="section user-review-section flex flex-center">
+        {% if user.is_authenticated %}
+            <div class="container flex flex-center flex-column">
+                <h1 class="review-greeter">
+                    Weee, {{ user.first_name }} {{ user.last_name }}!
+                    <br>
+                    Let´s book a table:
+                </h1>
+                    
+                    <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input class="change-button" type="submit" value="SAVE BOOKING">
+                    </form>
+
+            </div>
+        {% endif %}
+    </section>
+{% endblock content %}
