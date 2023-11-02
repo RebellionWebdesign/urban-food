@@ -51,14 +51,14 @@
                             <img class="review-image"
                                  src="{{ review.author.image.url }}"
                                  alt="{{ review.author.username }}">
-                            <h3 class="review-heading flex flex-between">
-                            {% endif %}
-                            {{ review.author }}
-                            <div>
-                                {{ review.rate }}
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                        </h3>
+                        {% endif %}
+                                <h3 class="review-heading flex flex-between">
+                                    <p>{{ review.author }}</p>
+                                    <div class="flex">
+                                        <p>{{ review.rate }}</p>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </h3>
                         <p class="review-content">{{ review.content }}</p>
                     </div>
                 {% endfor %}
