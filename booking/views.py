@@ -7,12 +7,12 @@ from .forms import NewBookingForm
 class BookingView(LoginRequiredMixin, View):
     """
     This view pulls all the user bookings from the database and displays
-    them on the my_bookings.html page (accessible via profile page)
+    them on the my bookings page (accessible via profile page)
     """
     def get(self, request):
-        bookings = Booking.objects.all().order_by('-date_created')
+        bookings = Booking.objects.filter(email=request.user).order_by('-number')
         context = {
-            "bookings" : bookings
+            "bookings" : bookings,
         }
         return render(request, 'booking/my_bookings.html', context)
     
@@ -30,23 +30,23 @@ class NewBooking(LoginRequiredMixin, View):
         if request.method == 'POST':
             booking_form = NewBookingForm(data=request.POST,
                                           instance=request.user)
-
-            if booking_form.is_valid():
-                #number =  We need a random number generator here
-                first_name = request.user.first_name
-                last_name = request.user.last_name
-                email = request.user.last_name
-                date = booking_form.cleaned_data['date']
-                time = booking_form.cleaned_data['time']
-                date_created = booking_form.cleaned_data['date_created']
-                new_booking = Booking(#number = number,
-                                    first_name = first_name,
-                                    last_name = last_name,
-                                    email = email,
-                                    date = date,
-                                    time = time,
-                                    date_created = date_created)
-                new_booking.save()
+        if booking_form.is_valid():
+            bookings = Booking.objects.filter(email=request.user).order_by('-number')
+            number =  len(bookings)+1
+            first_name = self.request.user
+            last_name = self.request.user
+            email = self.request.user
+            date = booking_form.cleaned_data['date']
+            time = booking_form.cleaned_data['time']
+            new_booking = Booking(number = number,
+                                first_name = first_name,
+                                last_name = last_name,
+                                email = email,
+                                date = date,
+                                time = time,)
+            new_booking.save()
+            return redirect('account/bookings/',
+                            {"bookings":bookings})
     
 class DeleteBooking(LoginRequiredMixin, View):
     def get(self, request, pk):
@@ -60,5 +60,7 @@ class DeleteBooking(LoginRequiredMixin, View):
 
     def post(self, request, pk):
         booking = get_object_or_404(Booking, pk=pk)
+        bookings = Booking.objects.filter(email=request.user).order_by('-number')
         booking.delete()
-        return redirect('my_bookings')
+        return render('booking/my_bookings.html',
+                      {"bookings":bookings})
