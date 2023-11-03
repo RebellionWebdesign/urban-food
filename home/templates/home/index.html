@@ -2,67 +2,80 @@
 {% load static %}
 {% block content %}
     <section class="section hero flex flex-center">
-        <div class="container flex flex-center flex-column">
-            <p class="hero-text">urban food presents:</p>
-            <h1>Best trash food in town!</h1>
-            {% if user.is_authenticated %}
-                <p class="hero-text hide">please log in to book a table!</p>
-            {% else %}
-                <p class="hero-text">please log in to book a table!</p>
-            {% endif %}
-            {% if user.is_authenticated %}
-                <div class="cta-wrapper flex hide">
-                    <div class="cta-wrapper flex flex-between">
-                        <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
-                        <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
-                    </div>
+        <div class="container flex flex-start flex-column">
+            <div class="column">
+                <p class="hero-text text-left">urban food presents:</p>
+                <h1>Best trash food in town!</h1>
+                {% if user.is_authenticated %}
+                    <p class="hero-text text-right hide">please log in to book a table!</p>
                 {% else %}
-                    <div class="cta-wrapper flex flex-between">
-                        <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
-                        <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
-                    </div>
-                {% endif %}
+                    <p class="hero-text text-right">please log in to book a table!</p>
+                </div>
+            {% endif %}
+            <div class="column">
+            {% if user.is_authenticated %}
+                <div class="cta-wrapper flex flex-end hide">
+                    <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
+                    <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
+                </div>
+            {% else %}
+                <div class="cta-wrapper flex flex-end">
+                    <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
+                    <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
+                </div>
+            {% endif %}
             </div>
-        </section>
-        <section class="section about flex flex-center">
-            <div class="container flex flex-center flex-column">
+        </div>
+    </section>
+    <section class="section about flex flex-center">
+        <div class="container flex flex-center">
+            <div class="column">
                 <h2 id="about" name="about">WHO WE ARE</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                    magna aliquyam erat, sed diam voluptua. At vero eos et
-                    accusam et justo duo dolores et ea rebum. Stet clita kasd
-                    gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.
+                <p class="about-text">
+                    At Urban Food we are more than a fast food restaurant. We are the culinary
+                    destination that defines the core of modern dining. Our journey began with a
+                    simple idea: to redefine the way people experience fast food. We've crafted a
+                    unique space where convenience meets exceptional taste, offering a fusion of
+                    flavors that cater to a diverse palate.
+
+                    Our commitment to quality is unwavering. We source only the freshest,
+                    locally-sourced ingredients to create mouthwatering dishes that elevate fast
+                    food to a new level. Whether you're craving a gourmet burger, a flavorful wrap,
+                    or a hearty salad, we have something to satisfy every craving.
+                    <br>
+                    <br>
+                    Come in and find out. We are here for you!
                 </p>
+            </div>
+            <div class="column flex flex-center">
                 <img src="https://shorturl.at/dpBX9">
             </div>
+        </div>
         </section>
-        <section class="section review flex flex-center">
-            <div class="container flex flex-center flex-column">
-                <h2 id="review" name="review" class="section-heading">WHAT CUSTOMERS SAY</h2>
+        <section class="section review flex flex-center flex-column">
+            <h2 id="review" name="review" class="section-heading">WHAT CUSTOMERS SAY</h2>
+            <div class="container grid grid-container">
                 {% for review in reviews %}
                     <div class="review-container flex flex-center flex-column">
-                        {% if 'placeholder' in user.image.url %}
+                        {% if 'placeholder' in review.author.image.url %}
                             <img class="review-image"
                                  src="https://res.cloudinary.com/drvhhiqov/image/upload/v1698587803/urban-food-default-profile-image_dms7kc.png"
                                  alt="default image">
                         {% else %}
                             <img class="review-image"
                                  src="{{ review.author.image.url }}"
-                                 alt="{{ review.author.username }}">
+                                 alt="Our cool customers">
                         {% endif %}
-                                <h3 class="review-heading flex flex-between">
-                                    <p>{{ review.author }}</p>
-                                    <div class="flex">
-                                        <p>{{ review.rate }}</p>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </h3>
+                        <h3 class="review-heading flex flex-between">
+                            <p>{{ review.author }}</p>
+                            <div class="flex">
+                                <p>{{ review.rate }}</p>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </h3>
                         <p class="review-content">{{ review.content }}</p>
                     </div>
                 {% endfor %}
             </div>
-        </div>
-    </section>
-{% endblock content %}
+        </section>
+    {% endblock content %}
