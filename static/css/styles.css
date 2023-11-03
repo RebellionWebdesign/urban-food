@@ -50,15 +50,15 @@ body {
 .section {
     width: 100vw;
     height: auto;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 260px
 }
 
 /* CONTAINERS */
 .container {
-    width: 73%;
+    width: 100%;
 }
 
-.column-50 {
+.column {
     width: 50%;
 }
 
@@ -66,17 +66,16 @@ body {
     width: 100%;
 }
 
-
 /* HEADERBAR STYLES [base.html] */
 .headerbar {
     width: 100vw;
     min-height: 8vh;
-
     background-color: var(--color-dark);
     box-shadow: 0px 3px 3px var(--color-shadow);
     position: fixed;
     top: 0;
     left: 0;
+    padding: 0px 260px 0px 260px;
 }
 
 .column-100 a {
@@ -195,11 +194,11 @@ nav ul li a:hover {
     color: var(--color-light);
     font-family: 'gabarito', sans-serif;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     /*this is calculated only for the hero
     * the other paragraphs will be differently calculated.
     */
-    font-size: 2rem;
+    font-size: 3.75rem;
 }
 
 .test {
@@ -212,14 +211,17 @@ nav ul li a:hover {
     width: 100%;
     color: var(--color-light);
     font-family: 'poppins', sans-serif;
-    /*this is calculated only for the hero
-    * the other paragraphs will be differently calculated.
+    /*
+    this is calculated only for the hero
+    the other paragraphs will be differently calculated.
     */
     font-size: 1.5rem;
+    text-align: right;
 }
 
 .cta {
-    margin-top: 2rem;
+    margin-top: 20px;
+    margin-right: 50px;
     width: 123px;
     border-radius: 25px;
     border: 2px solid var(--color-light);
@@ -233,13 +235,16 @@ nav ul li a:hover {
     transition: 0.25s ease-in-out;
 }
 
+.cta:nth-child(2) {
+    margin-right: 0;
+}
+
 .cta:hover {
     background-color: var(--color-accent);
 }
 
 .cta-wrapper {
     width: 100%;
-    margin: 0px 30px 0px 30px;
 }
 
 /* ABOUT SECTION */
@@ -248,23 +253,23 @@ nav ul li a:hover {
     width: 100vw;
 }
 
+.about-text {
+    font-size: 1rem;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+    color: var(--color-dark);
+    padding: 20px;
+}
+
 .about h2 {
     font-size: 1.375rem;
     font-family: 'gabarito', sans-serif;
     font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 0.75rem;
-    font-family: 'poppins', sans-serif;
-    font-weight: 600;
-    color: var(--color-dark);
+    margin-bottom: 10px;
 }
 
 .about img {
     width: 100%;
-    margin-top: 30px;
 }
 
 /* REVIEWS SECTION */
@@ -293,8 +298,14 @@ nav ul li a:hover {
     background-color: var(--color-light);
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 2rem;
 }
+
+.grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    }
 
 .review-container:nth-last-child(1) {
     margin-bottom: 0;
@@ -368,8 +379,7 @@ footer {
 
 /* PROFILE STYLES */
 .profile-section {
-    height: 92vh;
-    padding-top: 8vh;
+    height: 100vh;
     background-color: var(--color-dark-lighter);
     padding-bottom: 0;
 }
@@ -401,31 +411,32 @@ footer {
 }
 
 .profile-image {
-    width: 50%;
+    width: 35%;
     border-radius: 50%;
     border: 8px solid var(--color-primary);
 }
 
 .info-wrapper {
-    margin-top: 40px;
+    margin-top: 20px;
+    width: 60%;
 }
 
 .button-wrapper {
-    width: 100%;
+    width: 55%;
+    margin-top: 60px;
 }
 
 .profile-info {
-    width: 100%;
     color: var(--color-light);
     font-family: 'poppins', sans-serif;
     font-weight: 400;
     text-align: center;
     margin-top: 16px;
+    width: 33.33%;
 }
 
 .profile-cta {
-    width: 100%;
-    margin-top: 2rem;
+    width: 200px;
     border-radius: 25px;
     border: 2px solid var(--color-light);
     text-align: center;
@@ -439,11 +450,16 @@ footer {
 
 }
 
+.profile-cta:nth-child(2) {
+    margin-top: 30px;
+}
+
 .profile-greeter {
     width: 100%;
     color: var(--color-light);
-    font-family: 'gabarito', sans-serif;
+    font-family: 'poppins', sans-serif;
     font-weight: 400;
+    font-size: 1rem;
     text-align: center;
     margin-top: 15px;
 }
@@ -503,9 +519,16 @@ footer {
     text-align: center;
 }
 
+/* MESSAGES */
+.messages {
+    width: 100%;
+    position: fixed;
+    top: 8vh;
+    z-index: 99;
+}
+
 /* USER UPDATE STYLES */
-.update-section {
-    height: 92vh;
+.update {
     width: 100vw;
     padding-top: 8vh;
     background-color: var(--color-dark-lighter);
@@ -612,8 +635,17 @@ input[type=text] {
     flex-direction: column;
 }
 
+.flex-row {
+    flex-direction: row;
+}
+
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+/* GRID UTILS */
+.grid {
+    display: grid;
 }
 
 /* SPACING UTILS */
@@ -623,6 +655,19 @@ input[type=text] {
 
 .margin-s-top {
     margin-top: 15px;
+}
+
+/* LAYOUT UTILS */
+.text-right {
+    text-align: end;
+}
+
+.text-left {
+    text-align: start;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* VISIBILITY UTILS */
