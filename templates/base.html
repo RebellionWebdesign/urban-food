@@ -24,7 +24,7 @@
     <body>
         {% comment %} RESPONSIVE HEADER START {% endcomment %}
         <header class="headerbar flex flex-center">
-            <div class="container flex flex-center-y">
+            <nav class="container flex flex-center-y">
                 <div class="column-100 flex flex-center-y flex-between">
                     <a href="{% url 'home' %}" aria-label="the logo sends you back to the homepage">
                         <div class="logo-container flex flex-column flex-end ">
@@ -39,7 +39,7 @@
                         <i class="fa-solid fa-bars fa-xl"></i>
                     </div>
                 </div>
-                <div class="column-50 column-50-mobile flex flex-center flex-column closed">
+                <div class="column-50-mobile flex flex-center flex-column closed">
                     <i class="fa-solid fa-xmark fa-xl"></i>
                     <nav>
                         <ul>
@@ -116,7 +116,7 @@
                         </ul>
                     </nav>
                 </div>
-            </div>
+            </nav>
         </header>
         {% comment %} RESPONSIVE HEADER END {% endcomment %}
         <main>
