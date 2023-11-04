@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import DetailView, View
 from .models import Review
@@ -44,7 +45,8 @@ class NewReview(LoginRequiredMixin, View):
                                     content = review,
                                     rate = rate)
                 new_review.save()
-
+                messages.add_message(request, messages.INFO,
+                                 'Review saved!')
         return redirect('user_reviews')
     
 class DeleteReview(LoginRequiredMixin, View):
@@ -60,6 +62,8 @@ class DeleteReview(LoginRequiredMixin, View):
     def post(self, request, pk):
         review = get_object_or_404(Review, pk=pk)
         review.delete()
+        messages.add_message(request, messages.INFO,
+                                 'Review deleted!')
         return redirect('user_reviews')
 
 
@@ -81,5 +85,7 @@ class UpdateReview(LoginRequiredMixin, View):
         update_form = EditReviewForm(data=request.POST, instance=update_review)
         if update_form.is_valid():
             update_review.save()
+            messages.add_message(request, messages.INFO,
+                                 'Review updated!')
         return redirect('user_reviews')
     
