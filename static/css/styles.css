@@ -582,6 +582,7 @@ footer {
 
 /* MESSAGES */
 .messages {
+    display: block;
     text-align: center;
     padding-top: 10px;
     width: 100%;
