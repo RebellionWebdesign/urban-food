@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 #{% load static %}
 {% load i18n %}
 
@@ -12,14 +12,14 @@
                     Let´s book a table:
                 </h1>
                     
-                    <form method="POST">
+                    <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input class="booking-save-button" type="submit" value="SAVE BOOKING">
                     </form>
                     <a href="{% url 'user_bookings' %}" class="booking-cancel-button flex flex-center">
                         CANCEL
-                      </a>
+                    </a>
             </div>
         {% endif %}
     </section>
