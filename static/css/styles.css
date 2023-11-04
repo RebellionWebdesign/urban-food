@@ -708,6 +708,11 @@ label[for=id_rate] {
     margin-top: 30px;
 }
 
+.update-review-prev {
+    color: var(--color-light);
+    font-family: 'poppins', sans-serif;
+}
+
 /* FLEXBOX UTILS */
 .flex {
     display: flex;
@@ -767,6 +772,12 @@ label[for=id_rate] {
 .margin-s-top {
     margin-top: 15px;
 }
+
+.margin-l-both {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 
 /* LAYOUT UTILS */
 .text-right {
