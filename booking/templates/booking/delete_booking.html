@@ -22,6 +22,9 @@
             {% csrf_token %}
             <input class="delete-button" type="submit" value="YES, DELETE BOOKING">
         </form>
+        <a href="{% url 'user_bookings' %}" class="booking-cancel-button flex flex-center">
+          CANCEL
+        </a>
     </div>
     {% endif %}
     </section>

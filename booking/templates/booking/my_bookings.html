@@ -9,33 +9,33 @@
                     <br>
                     These are your past bookings:
                 </h1>
-                {% comment %} Add this back when done: href="{% url 'new_booking' %}" {% endcomment %}
                 <a href="{% url 'new_booking' %}" class="new-review-btn cta">
                     NEW BOOKING
                 </a>
                 {% for booking in bookings %}
-                    <div class="bookings review-container margin-l-top flex-column
+                    <div class="bookings booking-container margin-l-top flex-column
                                 flex-center flex-between">
                         <div class="booking-data">
-                            <p>Booking Number: {{ booking.number }}</p>
+                            <p><strong>Booking Number:</strong> {{ booking.number }}</p>
                         </div>
                         <div class="booking-data">
-                            <p>Name: {{ booking.first_name.first_name }} 
+                            <p><strong>Name:</strong> {{ booking.first_name.first_name }} 
                                 {{ booking.last_name }}</p>
                         </div>
                         <div class="booking-data">
-                            <p>Mail Address: {{ booking.email.email }}</p>
+                            <p><strong>Mail Address:</strong> {{ booking.email.email }}</p>
                         </div>
                         <div class="booking-data">
-                            <p>Booking Date: {{ booking.date }}</p>
+                            <p><strong>Booking Date:</strong> {{ booking.date }}</p>
                         </div>
                         <div class="booking-data">
-                            <p>Booking Time: {{ booking.time }}</p>
+                            <p><strong>Booking Time:</strong> {{ booking.time }}</p>
                         </div>
                         <div class="booking-data">
-                            <p>Booked on: {{ booking.date_created }}</p>
+                            <p><strong>Booked on:</strong> {{ booking.date_created }}</p>
                         </div>
-                        <a href="{% url 'delete_booking' pk=booking.pk %}" class="booking-cancel-button">DELETE</a>
+                        <a href="{% url 'delete_booking' pk=booking.pk %}"
+                            class="booking-cancel-button">DELETE</a>
                     </div>
                     {% empty %}
                     <h4>Press here to book a table!</h4>

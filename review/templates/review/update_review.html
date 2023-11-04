@@ -10,11 +10,16 @@
                     <br>
                     Please update your review below:
                 </h1>
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ update_form.as_p }}
-                    <input class="change-button" type="submit" value="UPDATE REVIEW">
-                </form>
+                    <form class="review-update-form flex flex-center flex-column"
+                            method="post">
+                        {% csrf_token %}
+                        {{ update_form.as_p }}
+                        <input class="update-review-button" type="submit"
+                                value="UPDATE REVIEW">
+                    </form>
+                    <a href="{% url 'user_reviews' %}" class="review-cancel-button flex flex-center">
+                        CANCEL
+                      </a>
             </div>
         {% endif %}
     </section>

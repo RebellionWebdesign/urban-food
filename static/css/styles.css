@@ -221,7 +221,6 @@ nav ul li a:hover {
 
 .cta {
     margin-top: 20px;
-    margin-right: 50px;
     width: 123px;
     border-radius: 25px;
     border: 2px solid var(--color-light);
@@ -293,11 +292,12 @@ nav ul li a:hover {
     margin-top: 10px;
 }
 
-.review-container {
+.front-review-container {
     width: 100%;
     background-color: var(--color-light);
     padding: 10px;
     border-radius: 10px;
+    font-family: 'poppins', sans-serif;
 }
 
 .grid-container {
@@ -346,7 +346,7 @@ nav ul li a:hover {
 }
 
 .review-wrapper {
-    width: 100%;
+    width: 30%;
     background-color: var(--color-light);
     padding: 20px;
     border-radius: 20px;
@@ -354,7 +354,56 @@ nav ul li a:hover {
 }
 
 .new-review-btn {
-    width: 100%;
+    width: 30%;
+}
+
+.review-cancel-button {
+    display: block;
+    width: 200px;
+    border-radius: 10px;
+    border: 2px solid var(--color-light);
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    padding: 8px 16px 8px 16px;
+    transition: 0.25s ease-in-out;
+    margin: 0 auto;
+    margin-top:  20px;
+}
+
+/* BOOKING STYLES */
+.booking-container {
+    width: 30%;
+    height: 250px;
+    background-color: var(--color-light);
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'poppins', sans-serif;
+}
+
+.booking-cancel-button,
+.booking-save-button {
+    display: block;
+    width: 200px;
+    border-radius: 10px;
+    border: 2px solid var(--color-light);
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    padding: 8px 16px 8px 16px;
+    transition: 0.25s ease-in-out;
+    margin: 0 auto;
+    margin-top:  20px;
+}
+
+.booking-cancel-button {
+    margin-top: 20px;
 }
 
 /* FOOTER STYLES */
@@ -412,6 +461,12 @@ footer {
 
 .profile-image {
     width: 35%;
+    border-radius: 50%;
+    border: 8px solid var(--color-primary);
+}
+
+.profile-image-delete {
+    width: 20%;
     border-radius: 50%;
     border: 8px solid var(--color-primary);
 }
@@ -532,7 +587,6 @@ footer {
     width: 100vw;
     padding-top: 8vh;
     background-color: var(--color-dark-lighter);
-    padding-bottom: 0;
 }
 
 .update-container {
@@ -562,7 +616,7 @@ input {
 
 input[type=text] {
     color: var(--color-dark);
-    width: 100%;
+    width: 30%;
     height: 40px;
     border-radius: 20px;
     border: 2px solid var(--color-primary);
@@ -581,8 +635,46 @@ input[type=text] {
     margin-bottom: 5px;
 }
 
-.change-button {
+.password-link {
+    color: var(--color-accent);
+}
+
+.user-info-wrapper {
     width: 100%;
+}
+
+/* REVIEW UPDATE */
+
+.form-content {
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.rate {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px var(--color-primary) solid;
+}
+
+label[for=id_content] {
+    display: block;
+    text-align: start;
+    margin-bottom: 5px;
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
+}
+
+label[for=id_rate] {
+    display: block;
+    text-align: start;
+    margin-bottom: 5px;
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
+}
+
+.update-review-button {
+    width: 60%;
     height: 40px;
     border-radius: 20px;
     border: 2px solid var(--color-light);
@@ -591,10 +683,21 @@ input[type=text] {
     font-family: 'poppins', sans-serif;
     font-weight: 700;
     text-align: center;
+    margin-top: 30px;
 }
 
-.password-link {
-    color: var(--color-accent);
+
+.review-save-button {
+    width: 60%;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--color-light);
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 30px;
 }
 
 /* FLEXBOX UTILS */

@@ -15,9 +15,11 @@
                     <form method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input class="change-button" type="submit" value="SAVE BOOKING">
+                    <input class="booking-save-button" type="submit" value="SAVE BOOKING">
                     </form>
-
+                    <a href="{% url 'user_bookings' %}" class="booking-cancel-button flex flex-center">
+                        CANCEL
+                      </a>
             </div>
         {% endif %}
     </section>
