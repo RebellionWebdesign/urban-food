@@ -18,5 +18,9 @@ mobileToggleClose.addEventListener("click", () => {
 /* This will remove the displayed messages after a certain time */
 setTimeout(() => {
     const message = document.getElementById("messages")
-    message.style.display = 'none'
+    if (message != 'messages') {
+
+    } else {
+        message.style.display = 'none'
+    }
 }, 3000)
