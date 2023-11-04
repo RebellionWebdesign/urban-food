@@ -59,11 +59,11 @@ body {
 }
 
 .column {
-    width: 50%;
+    width: 100%;
 }
 
-.column-100 {
-    width: 100%;
+.column-50 {
+    width: 50%;
 }
 
 /* HEADERBAR STYLES [base.html] */
@@ -274,6 +274,12 @@ nav ul li a:hover {
 /* REVIEWS SECTION */
 .review {
     background-color: var(--color-primary);
+}
+
+.review-container {
+    background-color: var(--color-light);
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .section-heading {
