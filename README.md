@@ -8,17 +8,56 @@
 
 ### PROJECT GOAL
 
+Create a website for the fictive Urban Food restaurant which useful for the users and the site owner as well.
+
 ### PROJECT OBJECTIVES
+
+- Create a simple and intuitive user experience
+- Add relevant content for the website
+- Differentiate between user and staff accounts
+- make the website available and functional across multiple different devices
 
 ### SCOPE
 
+#### DELIVER A SIMPLE AND INTUITIVE UX
+
+- Ensure the navigation is available and recognizable as such
+- Ensure the pages on the website are named appropriately so the user understands how to use them
+- Ensure visual feedback so users know what happens when it happens
+- Design the website according to the restaurants color scheme
+
 #### RELEVANT CONTENT
 
-#### FEATURES FOR UPGRADED EXPERIENCE
+- Ensure that the purpose of the website is visible on the frontpage
+- Ensure that the restaurants´ information is visible on the frontpage
+- Ensure that user reviews are visible on the frontpage
 
-#### DIFFERENT CLIENT AND STAFF MEMBER ACCOUNTS
+#### FEATURES
+
+- Register on the website using email and password
+- Make CRUD available for the user profile data
+- Make CRUD available for the user reviews data
+- Make CRUD available for the user bookings data
+- Make CRUD available for the site owner
+- Make CRUD available for staff members
+
+#### DISTINCTION BETWEEN ACCOUNTS
+
+- Enable users to add, edit and delete their own reviews on the restaurant
+- Enable users to add, change and delete their own user data
+- Enable users to add their own bookings
+
+------
+
+- Enable the website owner to view all data from the admin area
+
+------
+
+- Enable staff members to view bookings and cancel them
 
 #### RESPONSIVENESS
+
+- Enable responsiveness for Desktop, Tablets and Phones
 
 ### STRUCTURE
 
