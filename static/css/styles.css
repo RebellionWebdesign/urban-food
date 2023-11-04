@@ -1521,8 +1521,24 @@ label[for=id_rate] {
     }
 
     .cta-wrapper {
+        margin-top: 30px;
+        width: 100%;
         padding: 0 30px;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a.cta {
+        margin: 0;
+    }
+
+    a.cta:nth-child(2) {
+        margin-top: 20px;
+    }
+
+    a.cta:nth-child(1) {
+        margin-right: 0;
     }
 
     .column-mobile {
