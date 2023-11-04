@@ -66,6 +66,7 @@ class DeleteReview(LoginRequiredMixin, View):
 class UpdateReview(LoginRequiredMixin, View):
     def get(self, request, pk):
         """Receive review update form"""
+        update_form_content = Review.objects.get(pk=pk)
         update_form = EditReviewForm(data=request.POST, instance=request.user)
         review = get_object_or_404(Review, pk=pk)
         return render(
