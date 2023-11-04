@@ -168,6 +168,7 @@ nav ul li a:hover {
 }
 
 .closed {
+    display: none;
     right: -50vw;
 }
 
@@ -183,10 +184,10 @@ nav ul li a:hover {
     background: rgb(0, 0, 0);
     background:
         linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%,
-            rgba(0, 0, 0, 0.65) 100%),
+        rgba(0, 0, 0, 0.65) 100%),
         url("https://shorturl.at/aopwK");
     background-position: center center;
-    height: 80vh;
+    height: 100vh;
 }
 
 .container h1 {
@@ -806,8 +807,6 @@ label[for=id_rate] {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1440px) {}
-
 @media screen and (max-width: 992px) {}
 
 @media screen and (max-width: 762px) and (orientation: portrait) {}
@@ -816,4 +815,140 @@ label[for=id_rate] {
 
 @media screen and (max-width: 576px) {}
 
-@media screen and (max-width: 378px) {}
+@media screen and (max-width: 378px) {
+
+    /* HOME PAGE */
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .headerbar {
+        width: 100vw;
+        padding: 0 20px
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        width: 338px;
+    }
+
+    .container h1 {
+        width: 100em;
+        font-size: 32px
+    }
+
+    .cta-wrapper {
+        padding: 0 30px;
+        justify-content: space-between;
+    }
+
+    .column-mobile {
+        flex-direction: column;
+    }
+
+    .column-50 {
+        width: 100%;
+    }
+
+    #about {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-text {
+        width: 338px;
+        text-align: center;
+    }
+
+    .grid-container {    
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+
+    .column-50-mobile {
+        z-index: 1;
+        width: 50vw;
+    }
+
+    /* PROFILE PAGE */
+    .info-wrapper {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .profile-info {
+        width: 100%;
+    }
+
+    #id_username {
+        width: 100%;
+    }
+
+    #id_first_name {
+        width: 100%;
+    }
+
+    #id_last_name {
+        width: 100%;
+    }
+
+    .helptext {
+        margin-top: 20px;
+    }
+
+    .danger-section {
+        padding: 0 20px;
+    }
+
+    /* REVIEWS (PROFILE) */
+
+    .review-greeter {
+        width: 90% !important; 
+    }
+
+    .new-review-btn {
+        width: 100%;
+    }
+
+    .review-wrapper {
+        width: 100%;
+    }
+
+    .button-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .form-content {
+        width: 100%;
+    }
+
+    /* BOOKINGS */
+    .booking-container {
+        width: 100%;
+    }
+
+}
