@@ -652,8 +652,10 @@ input[type=text] {
 /* REVIEW UPDATE */
 
 .form-content {
-    border-radius: 20px;
+    border-radius: 5px;
     margin-bottom: 30px;
+    font-family: 'poppins', sans-serif;
+    padding: 5px;
 }
 
 .rate {
