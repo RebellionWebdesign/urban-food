@@ -45,7 +45,8 @@ class NewBooking(LoginRequiredMixin, View):
                                 date = date,
                                 time = time,)
             new_booking.save()
-            return redirect('account/bookings/',
+            return render(request,
+                            'booking/my_bookings.html',
                             {"bookings":bookings})
     
 class DeleteBooking(LoginRequiredMixin, View):
@@ -62,5 +63,6 @@ class DeleteBooking(LoginRequiredMixin, View):
         booking = get_object_or_404(Booking, pk=pk)
         bookings = Booking.objects.filter(email=request.user).order_by('-number')
         booking.delete()
-        return render('booking/my_bookings.html',
+        return render(request,
+                      'booking/my_bookings.html',
                       {"bookings":bookings})
