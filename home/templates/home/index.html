@@ -12,7 +12,6 @@
                     <p class="hero-text text-right">please log in to book a table!</p>
                 </div>
             {% endif %}
-            <div>
             {% if user.is_authenticated %}
                 <div class="cta-wrapper flex flex-end hide">
                     <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
@@ -24,7 +23,6 @@
                     <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
                 </div>
             {% endif %}
-            </div>
         </div>
     </section>
     <section class="section about flex flex-center">
