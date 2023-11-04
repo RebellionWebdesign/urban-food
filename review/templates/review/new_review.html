@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% block content %}
     <section class="section user-review-section flex flex-center">
         {% if user.is_authenticated %}
