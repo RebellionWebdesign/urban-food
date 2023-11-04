@@ -232,6 +232,21 @@ nav ul li a:hover {
     transition: 0.25s ease-in-out;
 }
 
+.login-button {
+    margin-top: 20px;
+    width: 123px;
+    border-radius: 25px;
+    border: 2px solid var(--color-light);
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    padding: 8px 16px 8px 16px;
+    transition: 0.25s ease-in-out;
+}
+
 .cta:nth-child(1) {
     margin-right: 30px;
 }
