@@ -7,6 +7,13 @@ class NewReviewForm(ModelForm):
         fields = ['content', 'rate']
 
 class EditReviewForm(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['content'].widget.attrs['class'] = 'form-content'
+        self.fields['rate'].widget.attrs['class'] = 'rate'
+    
     class Meta:
         model = Review
         fields = ['content', 'rate']
