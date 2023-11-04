@@ -10,6 +10,11 @@
                     <br>
                     Please update your review below:
                 </h1>
+                    <p class="update-review-prev margin-l-both">
+                        Previous Content:<br>
+                        <strong>{{ review.content }}</strong><br>
+                        Previous Rate: <strong>{{ review.rate }}</strong>
+                    </p>
                     <form class="review-update-form flex flex-center flex-column"
                             method="post">
                         {% csrf_token %}
