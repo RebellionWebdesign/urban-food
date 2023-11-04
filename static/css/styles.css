@@ -1367,6 +1367,10 @@ label[for=id_rate] {
         width: 536px;
     }
 
+    .text-right {
+        text-align: start;
+    }
+
     .container h1 {
         width: 100%;
         font-size: 45px
@@ -1374,7 +1378,9 @@ label[for=id_rate] {
 
     .cta-wrapper {
         padding: 0 120px;
-        justify-content: space-between;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
     }
 
     .column-mobile {
