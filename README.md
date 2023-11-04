@@ -76,27 +76,32 @@ The Urban Food project uses a postgresql database for data storage. This is the 
   <summary>The Urban Food Database</summary>
 <img src="docs/ERD/urban-food-final-erd-1.png" ><br>
 </details>
-
-
 ### SURFACE
 
 #### COLOR SCHEME
 
 #### FONTS
 
+The fonts used on this website are [Poppins](https://fonts.google.com/specimen/Poppins?query=poppins) and [Gabarito](https://fonts.google.com/specimen/Gabarito?query=gabarito) provided by Google Fonts
+
+<details>
+  <summary>Gabarito Google Font</summary>
+<img src="docs/images/readme-images/gabarito-font.png" ><br>
+</details>
+
+<details>
+  <summary>Poppins Google Font</summary>
+<img src="docs/images/readme-images/poppins-font.png" ><br>
+</details>
 #### VISUAL EFFECTS
+
+Visual effects are sparsingly used in this project. However, there are some:
 
 ## AGILE METHODOLOGY
 
 ## FEATURES
 
 ### FUTURE FEATURE CONSIDERATIONS
-
-## RESPONSIVE LAYOUT AND DESIGN
-
-### BREAKPOINTS
-
-### TESTED DEVICES
 
 ## TOOLS USED
 
