@@ -56,4 +56,6 @@ class ChangeUserView(LoginRequiredMixin, View):
         if request.method == 'POST':
             if change_form.is_valid():
                 change_form.save()
+                messages.add_message(request, messages.INFO,
+                                 'Profile was changed!')
                 return redirect('user_profile')
