@@ -74,8 +74,9 @@ The Urban Food project uses a postgresql database for data storage. This is the 
 
 <details>
   <summary>The Urban Food Database</summary>
-<img src="hhttps://github.com/RebellionWebdesign/urban-food/blob/a952f5ba09719a2e3fe9fb40b3c961918578334b/docs/ERD/urban-food-final-erd.pdf" ><br>
+<img src="docs/ERD/urban-food-final-erd-1.png" ><br>
 </details>
+
 
 ### SURFACE
 
