@@ -93,6 +93,8 @@ The fonts used on this website are [Poppins](https://fonts.google.com/specimen/P
   <summary>Poppins Google Font</summary>
 <img src="docs/images/readme-images/poppins-font.png" ><br>
 </details>
+
+
 #### VISUAL EFFECTS
 
 Visual effects are sparsingly used in this project. However, there are some:
