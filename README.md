@@ -4,6 +4,8 @@
 
 ## OVERVIEW
 
+This project is designed to enable a fictive restaurant to manage table bookings easily. The users are given the ability to create a booking, write a review or to delete their user accounts or their reviews all together. <u>Staff members are given the possibility to review and cancel bookings after the client has contacted the restaurant for a cancellation.</u> <u>This is a business decision so users dont juggle around with booked tables without the restaurant oner knowing.</u> The site was developed using Django, HTML. CSS and JavaScript.
+
 ## UX
 
 ### PROJECT GOAL
@@ -63,7 +65,17 @@ Create a website for the fictive Urban Food restaurant which useful for the user
 
 ### SKELETON
 
+#### Wireframes
+
+Wireframes can be accessed in the [docs folder](https://github.com/RebellionWebdesign/urban-food/tree/a952f5ba09719a2e3fe9fb40b3c961918578334b/docs)
+
 ### DATABASE
+The Urban Food project uses a postgresql database for data storage. This is the final schema:
+
+<details>
+  <summary>The Urban Food Database</summary>
+<img src="hhttps://github.com/RebellionWebdesign/urban-food/blob/a952f5ba09719a2e3fe9fb40b3c961918578334b/docs/ERD/urban-food-final-erd.pdf" ><br>
+</details>
 
 ### SURFACE
 
