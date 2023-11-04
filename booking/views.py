@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 from .models import Booking
@@ -45,6 +46,8 @@ class NewBooking(LoginRequiredMixin, View):
                                 date = date,
                                 time = time,)
             new_booking.save()
+            messages.add_message(request, messages.INFO,
+                                 'Booking saved!')
             return render(request,
                             'booking/my_bookings.html',
                             {"bookings":bookings})
@@ -63,6 +66,8 @@ class DeleteBooking(LoginRequiredMixin, View):
         booking = get_object_or_404(Booking, pk=pk)
         bookings = Booking.objects.filter(email=request.user).order_by('-number')
         booking.delete()
+        messages.add_message(request, messages.INFO,
+                                 'Booking deleted!')
         return render(request,
                       'booking/my_bookings.html',
                       {"bookings":bookings})
