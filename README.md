@@ -76,9 +76,17 @@ The Urban Food project uses a postgresql database for data storage. This is the 
   <summary>The Urban Food Database</summary>
 <img src="docs/ERD/urban-food-final-erd-1.png" ><br>
 </details>
+
 ### SURFACE
 
 #### COLOR SCHEME
+
+The chosen color scheme is simple but intuitive for a fast food restaurant. The main color chosen is red because it stands for energy and dynamics.
+
+<details>
+  <summary>Color Scheme</summary>
+<img src="docs/images/readme-images/color-scheme.png" ><br>
+</details>
 
 #### FONTS
 
