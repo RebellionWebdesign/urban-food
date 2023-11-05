@@ -27,7 +27,8 @@
             <nav class="container flex flex-center-y">
                 <div class="column flex flex-center-y flex-between">
                     <a href="{% url 'home' %}" aria-label="the logo sends you back to the homepage">
-                        <div class="logo-container flex flex-column flex-end ">
+                        <div class="logo-container flex flex-column flex-end "
+                            aria-hidden="true">
                             <div class="logo-text-wrapper">
                                 <p>urban</p>
                                 <p>food</p>
@@ -130,9 +131,18 @@
                 <p class="footer-text">2023 Daniel Stauffer</p>
             </div>
             <div class="flex flex-center-y">
-                <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-xl"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                <a href="https://whatsapp.com" target="_blank"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+                <a href="https://facebook.com" target="_blank"
+                    aria-label="facebook">
+                    <i class="fa-brands fa-facebook fa-xl"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank"
+                    aria-label="instagram">
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                </a>
+                <a href="https://whatsapp.com" target="_blank"
+                    aria-label="whatsapp">
+                    <i class="fa-brands fa-whatsapp fa-xl"></i>
+                </a>
             </div>
         </div>
         </footer>
