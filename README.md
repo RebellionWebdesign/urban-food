@@ -37,11 +37,13 @@ Create a website for the fictive Urban Food restaurant which useful for the user
 #### FEATURES
 
 - Register on the website using email and password
-- Make CRUD available for the user profile data
-- Make CRUD available for the user reviews data
-- Make CRUD available for the user bookings data
-- Make CRUD available for the site owner
-- Make CRUD available for staff members
+- Make CRUD available for:
+  - The user profile data
+  - The user reviews data
+  - The user bookings data
+  - The site owner
+  - The staff members
+
 
 #### DISTINCTION BETWEEN ACCOUNTS
 
@@ -55,7 +57,7 @@ Create a website for the fictive Urban Food restaurant which useful for the user
 
 ------
 
-- Enable staff members to view bookings and cancel them
+- Enable staff members to view bookings and cancel them (either from admin or from a custom page)
 
 #### RESPONSIVENESS
 
@@ -101,8 +103,6 @@ The fonts used on this website are [Poppins](https://fonts.google.com/specimen/P
   <summary>Poppins Google Font</summary>
 <img src="docs/images/readme-images/poppins-font.png" ><br>
 </details>
-
-
 #### VISUAL EFFECTS
 
 Visual effects are sparsingly used in this project. However, there are some:
@@ -110,6 +110,15 @@ Visual effects are sparsingly used in this project. However, there are some:
 ## AGILE METHODOLOGY
 
 ## FEATURES
+
+### EXISTING FEATURES
+
+- Register to the website using email and password
+- Log in to the website using email and password
+- Users can create a profile, edit the data and delete the profile
+- Users can create reviews, edit the reviews and delete the reviews
+- Users can create bookings, but not delete or edit them. This is a business decision (see overview for details)
+- Admin can do all of the above
 
 ### FUTURE FEATURE CONSIDERATIONS
 
@@ -147,14 +156,11 @@ Visual effects are sparsingly used in this project. However, there are some:
 
 ## CREDITS
 
+### CONTENT
+
 - The profile pictures for the fictive users were taken from [RandomUser](https://randomuser.me/photos)
 - The hardcoded images on the home page refer to cloudinary, but were shortened with [ShortUrl](https://www.shorturl.at/shortener.php)
 - The hero image and the team image on the front page are generated with [MidJourney AI](https://www.midjourney.com/home)
-
-### CONTENT
-
-### MEDIA
-
-### CODE
+- Some of the reviews were submitted by friends and family.
 
 ## ACKNOWLEDGEMENTS
