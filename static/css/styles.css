@@ -55,7 +55,7 @@ body {
 
 /* CONTAINERS */
 .container {
-    width: 73%;
+    width: 100%;
 }
 
 .column {
@@ -434,7 +434,7 @@ nav ul li a:hover {
 footer {
     width: 100vw;
     height: 8vh;
-    padding: 10px 20px;
+    padding: 10px 260px;
     background-color: var(--color-dark);
 }
 
@@ -1157,6 +1157,10 @@ label[for=id_email] {
     .booking-container {
         width: 75%;
     }
+    
+    footer {
+        padding: 0px 60px;
+    }
 
 }
 
@@ -1353,16 +1357,6 @@ label[for=id_email] {
     body {
         overflow-x: hidden;
         width: 100%;
-    }
-
-    .headerbar {
-        width: 100vw;
-        padding: 0 60px;
-        height: 8vh;
-    }
-
-    .logo-container {
-        height: 8vh;
     }
 
     .logo-text-wrapper p {
@@ -1692,6 +1686,10 @@ label[for=id_email] {
     /* BOOKINGS */
     .booking-container {
         width: 75%;
+    }
+
+    footer {
+        padding: 0px 20px;
     }
 
 }
