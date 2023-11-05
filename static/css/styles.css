@@ -55,7 +55,7 @@ body {
 
 /* CONTAINERS */
 .container {
-    width: 100%;
+    width: 73%;
 }
 
 .column {
@@ -434,7 +434,7 @@ nav ul li a:hover {
 footer {
     width: 100vw;
     height: 8vh;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 20px;
     background-color: var(--color-dark);
 }
 
@@ -1332,6 +1332,7 @@ label[for=id_email] {
 
     .section {
         padding: 80px 60px;
+        height: auto;
     }
 
     .container {
@@ -1494,6 +1495,10 @@ label[for=id_email] {
         padding: 80px 20px;
     }
 
+    .sign-up-s {
+        margin-top: 130px
+    }
+
     .container {
         width: 100%;
     }
@@ -1646,7 +1651,8 @@ label[for=id_email] {
     }
 
     .section {
-        padding: 80px 20px;
+        padding: 80px  20px;
+        height: auto;
     }
 
     .container {
@@ -1773,6 +1779,10 @@ label[for=id_email] {
         width: 100%;
     }
 
+    footer {
+        padding: 10px 10px 20px 20px;
+    }
+
 }
 
 @media screen and (max-width: 377px) and (min-width: 320px) {
@@ -1801,6 +1811,7 @@ label[for=id_email] {
 
     .section {
         padding: 80px 20px;
+        height: auto;
     }
 
     .container {
@@ -1926,6 +1937,10 @@ label[for=id_email] {
     .booking-container {
         width: 90%;
         height: auto;
+    }
+
+    footer {
+        padding: 10px 20px;
     }
 
 }
