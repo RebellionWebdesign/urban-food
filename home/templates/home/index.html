@@ -4,12 +4,20 @@
     <section class="section hero flex flex-center">
         <div class="container flex flex-center-mobile flex-column">
             <div class="column hero-column">
-                <p class="hero-text text-center">urban food presents:</p>
+                <p class="hero-text text-center"
+                    aria-hidden="true">
+                        urban food presents:
+                </p>
                 <h1 class="text-center">Best trash food in town!</h1>
                 {% if user.is_authenticated %}
-                    <p class="hero-text text-right hide">please log in to book a table!</p>
+                    <p class="hero-text text-right hide"
+                        aria-hidden="true">
+                        please log in to book a table!
+                    </p>
                 {% else %}
-                    <p class="hero-text text-center">please log in to book a table!</p>
+                    <p class="hero-text text-center" aria-hidden="true">
+                        please log in to book a table!
+                    </p>
                 </div>
             {% endif %}
             {% if user.is_authenticated %}
@@ -54,7 +62,8 @@
             <h2 id="review" class="section-heading">WHAT CUSTOMERS SAY</h2>
             <div class="container grid grid-container">
                 {% for review in reviews %}
-                    <div class="review-container flex flex-center flex-column">
+                    <div class="review-container flex flex-center flex-column"
+                        aria-hidden="true">
                         {% if 'placeholder' in review.author.image.url %}
                             <img class="review-image"
                                  src="https://res.cloudinary.com/drvhhiqov/image/upload/v1698587803/urban-food-default-profile-image_dms7kc.png"
@@ -64,7 +73,8 @@
                                  src="{{ review.author.image.url }}"
                                  alt="Our cool customers">
                         {% endif %}
-                        <div class="review-heading flex flex-center-y flex-between">
+                        <div class="review-heading flex flex-center-y flex-between"
+                            aria-hidden="true">
                         <h3>{{ review.author }}</h3>
                             <div class="flex">
                                 <p><strong>{{ review.rate }}</strong></p>
