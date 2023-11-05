@@ -44,13 +44,18 @@
                         <a href="{% url 'delete_booking' pk=booking.pk %}"
                             class="booking-cancel-button">DELETE</a>
                     </div>
-                    {% empty %}
-                    <h4>Press here to book a table!</h4>
-                {% endfor %}
+                    {% endfor %}
+                {% if booking < 5 %}
+                <a href="#top" class="new-review-btn cta hide">
+                    BACK TO TOP 
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+                {% else %}
                 <a href="#top" class="new-review-btn cta">
                     BACK TO TOP 
                     <i class="fa-solid fa-arrow-up"></i>
                 </a>
+                {% endif %}
             </div>
         {% endif %}
     </section>
