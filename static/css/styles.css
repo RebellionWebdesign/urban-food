@@ -492,7 +492,7 @@ footer {
 }
 
 .profile-image {
-    width: 35%;
+    width: 20%;
     border-radius: 50%;
     border: 8px solid var(--color-primary);
 }
@@ -1129,6 +1129,7 @@ label[for=id_email] {
 
     .new-review-btn {
         width: 75%;
+        cursor: pointer;
     }
 
     .review-wrapper {
