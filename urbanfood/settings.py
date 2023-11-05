@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [os.environ.get("DEV_URL"), os.environ.get("PROD_URL")]
 AUTH_USER_MODEL = "user.User"
 
 #Allauth settings
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
@@ -53,7 +53,7 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_SESSION_REMEMBER = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 EMAIL_HOST = os.environ.get("SMTP")
 EMAIL_PORT = os.environ.get("MAIL_PORT")
