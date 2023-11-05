@@ -2,23 +2,23 @@
 {% load static %}
 {% block content %}
     <section class="section hero flex flex-center">
-        <div class="container flex flex-start flex-center-mobile flex-column">
-            <div class="column-50">
-                <p class="hero-text text-left">urban food presents:</p>
-                <h1>Best trash food in town!</h1>
+        <div class="container flex flex-center-mobile flex-column">
+            <div class="column hero-column">
+                <p class="hero-text text-center">urban food presents:</p>
+                <h1 class="text-center">Best trash food in town!</h1>
                 {% if user.is_authenticated %}
                     <p class="hero-text text-right hide">please log in to book a table!</p>
                 {% else %}
-                    <p class="hero-text text-right">please log in to book a table!</p>
+                    <p class="hero-text text-center">please log in to book a table!</p>
                 </div>
             {% endif %}
             {% if user.is_authenticated %}
-                <div class="cta-wrapper flex flex-end hide">
+                <div class="cta-wrapper flex flex-center hidemargin-l-top">
                     <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
                     <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
                 </div>
             {% else %}
-                <div class="cta-wrapper flex flex-end">
+                <div class="cta-wrapper flex flex-center margin-l-top">
                     <a class="cta" href="{% url 'account_signup' %}">SIGN UP</a>
                     <a class="cta" href="{% url 'account_login' %}">LOGIN</a>
                 </div>
