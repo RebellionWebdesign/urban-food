@@ -395,6 +395,11 @@ nav ul li a:hover {
     transition: 0.25s ease-in-out;
     margin: 0 auto;
     margin-top: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.review-cancel-button:hover {
+    background-color: var(--color-accent);
 }
 
 /* BOOKING STYLES */
@@ -423,10 +428,11 @@ nav ul li a:hover {
     transition: 0.25s ease-in-out;
     margin: 0 auto;
     margin-top: 20px;
+    transition: 0.5s ease-in-out;
 }
 
-.booking-cancel-button {
-    margin-top: 20px;
+.booking-cancel-button:hover {
+    background-color: var(--color-accent);
 }
 
 /* FOOTER STYLES */
@@ -534,7 +540,18 @@ footer {
     background-color: var(--color-primary);
     padding: 8px 16px 8px 16px;
     transition: 0.25s ease-in-out;
+}
 
+.profile-cta:hover {
+    background-color: var(--color-accent);
+}
+
+input[type=submit] {
+    transition: 0.25s ease-in-out;
+}
+
+input[type=submit]:hover {
+    background-color: var(--color-accent);
 }
 
 .profile-cta:nth-child(2) {
