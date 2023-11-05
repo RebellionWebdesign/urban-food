@@ -209,10 +209,6 @@ nav ul li a:hover {
     width: 100%;
     color: var(--color-light);
     font-family: 'poppins', sans-serif;
-    /*
-    this is calculated only for the hero
-    the other paragraphs will be differently calculated.
-    */
     font-size: 1.5rem;
     text-align: right;
 }
@@ -282,6 +278,10 @@ nav ul li a:hover {
     font-family: 'gabarito', sans-serif;
     font-weight: 700;
     margin-bottom: 10px;
+}
+
+#about {
+    padding-left: 20px;
 }
 
 .about img {
