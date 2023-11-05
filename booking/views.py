@@ -12,8 +12,10 @@ class BookingView(LoginRequiredMixin, View):
     """
     def get(self, request):
         bookings = Booking.objects.filter(email=request.user).order_by('-number')
+        booking_count = bookings.count()
         context = {
             "bookings" : bookings,
+            "booking_count": booking_count,
         }
         return render(request, 'booking/my_bookings.html', context)
     
@@ -66,6 +68,4 @@ class DeleteBooking(LoginRequiredMixin, View):
         booking.delete()
         messages.add_message(request, messages.INFO,
                                  'Booking deleted!')
-        return render(request,
-                      'booking/my_bookings.html',
-                      {"bookings":bookings})
+        return redirect('user_bookings')
