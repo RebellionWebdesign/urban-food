@@ -3,6 +3,9 @@ from django.conf import settings
 from user.models import User
 
 class Review(models.Model):
+    """
+    This is the reviews model.
+    """
     RATE_CHOICES = (
 
         (1, '1'),

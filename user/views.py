@@ -7,12 +7,17 @@ from .models import User
 
 
 class BaseView(DetailView):
-
+    """
+    This view displays the user images on the reviews section.
+    """
     def get(self, request):
         return render(request, 'base.html')
 
 
 class UserProfile(LoginRequiredMixin, DetailView):
+    """
+    This view displays the user profile.
+    """
     template_name = 'user/profile.html'
     context_object_name = 'user_profile'
 
@@ -29,7 +34,9 @@ class UserProfile(LoginRequiredMixin, DetailView):
 
 
 class DeleteUserView(LoginRequiredMixin, View):
-
+    """
+    This view displays deletes the user profile.
+    """
     def get(self, request):
         return render(request, 'user/delete_user.html')
 
@@ -44,6 +51,9 @@ class DeleteUserView(LoginRequiredMixin, View):
 
 
 class ChangeUserView(LoginRequiredMixin, View):
+    """
+    This view displays is used to change user info.
+    """
     def get(self, request):
         change_form = ChangeUserForm(instance=request.user)
 

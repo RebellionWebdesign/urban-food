@@ -2,6 +2,9 @@ from django.db import models
 from django.conf import settings 
 
 class Booking(models.Model):
+    """
+    This is the bookings model.
+    """
     number = models.IntegerField()
     first_name = models.ForeignKey(settings.AUTH_USER_MODEL,
                                    on_delete=models.CASCADE,
