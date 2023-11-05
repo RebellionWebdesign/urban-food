@@ -7,9 +7,9 @@
 {% block content %}
 <section class="section auth-section flex flex-center flex-column">
   <div class="container-50 auth-container flex flex-center flex-column">
-<h1>{% trans "Sign Up" %}</h1>
+<h1 class="sign-up-s">{% trans "Sign Up" %}</h1>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signup flex flex-center flex-column" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
