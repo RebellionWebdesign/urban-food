@@ -1631,10 +1631,6 @@ label[for=id_email] {
         width: 100%;
     }
 
-    .section {
-        padding-top: 130px;
-    }
-
     .logo-container {
         height: 10vh;
     }
@@ -1786,10 +1782,6 @@ label[for=id_email] {
         width: 100%;
         display: flex;
         flex-direction: column;
-    }
-
-    .section {
-        height: auto;
     }
 
     html,
