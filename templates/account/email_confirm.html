@@ -1,4 +1,5 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
+{% load static %}
 
 {% load i18n %}
 {% load account %}
@@ -7,6 +8,8 @@
 
 
 {% block content %}
+<section class="section auth-section flex flex-center flex-column">
+    <div class="container-50 auth-container flex flex-center flex-column">
 <h1>{% trans "Confirm Email Address" %}</h1>
 
 {% if confirmation %}
@@ -20,7 +23,7 @@
 
 <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button type="submit">{% trans 'Confirm' %}</button>
+    <button class="cta" type="submit">{% trans 'Confirm' %}</button>
 </form>
 {% else %}
 <p>{% blocktrans %}Unable to confirm {{ email }} because it is already confirmed
@@ -37,5 +40,6 @@
     {% endblocktrans %}</p>
 
 {% endif %}
-
+</div>
+</section>
 {% endblock content %}
