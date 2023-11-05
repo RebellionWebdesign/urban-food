@@ -28,7 +28,7 @@
     <section class="section about flex flex-center">
         <div class="container flex flex-center column-mobile">
             <div class="column-50">
-                <h2 id="about" name="about">WHO WE ARE</h2>
+                <h2 id="about">WHO WE ARE</h2>
                 <p class="about-text">
                     At Urban Food we are more than a fast food restaurant. We are the culinary
                     destination that defines the core of modern dining. Our journey began with a
@@ -46,12 +46,12 @@
                 </p>
             </div>
             <div class="column-50 flex flex-center">
-                <img src="https://shorturl.at/dpBX9">
+                <img src="https://shorturl.at/dpBX9" alt="the team">
             </div>
         </div>
         </section>
         <section class="section review flex flex-center flex-column">
-            <h2 id="review" name="review" class="section-heading">WHAT CUSTOMERS SAY</h2>
+            <h2 id="review" class="section-heading">WHAT CUSTOMERS SAY</h2>
             <div class="container grid grid-container">
                 {% for review in reviews %}
                     <div class="review-container flex flex-center flex-column">
@@ -64,13 +64,13 @@
                                  src="{{ review.author.image.url }}"
                                  alt="Our cool customers">
                         {% endif %}
-                        <h3 class="review-heading flex flex-between">
-                            <p>{{ review.author }}</p>
+                        <div class="review-heading flex flex-center-y flex-between">
+                        <h3>{{ review.author }}</h3>
                             <div class="flex">
-                                <p>{{ review.rate }}</p>
+                                <p><strong>{{ review.rate }}</strong></p>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                        </h3>
+                        </div>
                         <p class="review-content">{{ review.content }}</p>
                     </div>
                 {% endfor %}
