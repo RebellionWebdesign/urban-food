@@ -737,6 +737,127 @@ label[for=id_rate] {
     font-family: 'poppins', sans-serif;
 }
 
+/* ALLAUTH PAGES */
+
+.auth-section {
+    height: 100vh;
+    background-color: var(--color-dark-lighter);
+}
+
+.auth-section h1 {
+    color: var(--color-light);
+    font-family: 'gabarito', sans-serif;
+    font-size: 60px;
+}
+
+.auth-section p {
+    color: var(--color-light);
+    font-family: 'poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 50px;
+}
+
+.auth-section a {
+    color: var(--color-accent);
+    font-family: 'poppins', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 50px;
+}
+
+label[for=id_login] {
+    display: block;
+    text-align: start;
+}
+
+label[for=id_password] {
+    display: block;
+    text-align: start;
+}
+
+label[for=id_password1] {
+    display: block;
+    text-align: start;
+}
+
+label[for=id_password2] {
+    display: block;
+    text-align: start;
+}
+
+label[for=id_email] {
+    display: block;
+    text-align: start;
+}
+
+#id_login {
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    margin: 0;
+}
+
+#id_password {
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    margin: 0;
+}
+
+#id_password1 {
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    margin: 0;
+}
+
+#id_password2 {
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    margin: 0;
+}
+
+#id_email {
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    margin: 0;
+}
+
+
+.primaryAction {
+    margin-top: 20px;
+    width: 123px;
+    border-radius: 25px;
+    border: 2px solid var(--color-light);
+    text-align: center;
+    color: var(--color-light);
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    background-color: var(--color-primary);
+    padding: 8px 16px 8px 16px;
+    transition: 0.25s ease-in-out;
+    margin-bottom: 30px;
+}
+
+.secondaryAction {
+    font-family: 'poppins', sans-serif;
+    color: var(--color-accent);
+}
+
+.signup ul {
+    color: var(--color-accent);
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    list-style-type: none;
+}
+
 /* FLEXBOX UTILS */
 .flex {
     display: flex;
@@ -775,6 +896,10 @@ label[for=id_rate] {
     flex-direction: column;
 }
 
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
 .flex-row {
     flex-direction: row;
 }
@@ -801,7 +926,6 @@ label[for=id_rate] {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-
 
 /* LAYOUT UTILS */
 .text-right {
@@ -1507,6 +1631,10 @@ label[for=id_rate] {
         width: 100%;
     }
 
+    .section {
+        padding-top: 130px;
+    }
+
     .logo-container {
         height: 10vh;
     }
@@ -1658,6 +1786,10 @@ label[for=id_rate] {
         width: 100%;
         display: flex;
         flex-direction: column;
+    }
+
+    .section {
+        height: auto;
     }
 
     html,
