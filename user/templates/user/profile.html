@@ -1,88 +1,92 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section class="section profile-section flex flex-center flex-column">
-    {% if messages %}
-    <ul id="messages" class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-{% comment %} User greeter {% endcomment %}
-<div class="container flex flex-center flex-column">
-{% if user.is_authenticated %}
-<div class="column flex flex-center">
-{% if 'placeholder' in user.image.url %}
-<img class="profile-image" src="https://shorturl.at/gpvGN" alt="default image">
-{% else %}
-<img class="profile-image" src="{{ user.image.url }}" alt="profile image">
-{% endif %}
-{% endif %}
-{% if user.first_name and user.last_name %}
-</div>
-<p class="profile-greeter">
-Hello <strong>{{ user.first_name }} {{ user.last_name }},</strong>
-<br>
-this is your user info:
-</p>
-{% else %}
-<p class="profile-greeter">Hello, this is your user info:</p>
-{% endif %}
-</div>
-
-{% comment %} User info {% endcomment %}
-<div class="info-wrapper flex flex-row flex-between">
-{% if user.username %}
-<div class="profile-info">
-USERNAME:
-<br>
-{{ user.username }}
-</div>
-{% else %}
-<div class="profile-info">
-USERNAME:
-<br>
-<p>Please consider choosing a username.</p>
-</div>
-{% endif %}
-{% if user.first_name and user.last_name %}
-<div class="profile-info">
-FIRST NAME, LAST NAME:
-<br>
-{{ user.first_name }} {{ user.last_name }}
-</div>
-{% else %}
-<div class="profile-info">
-FIRST NAME, LAST NAME:
-<br>
-<p>
-Please consider telling us your name.
-<br>
-We prefer to call by your name.
-</p>
-</div>
-{% endif %}
-<div class="profile-info">
-EMAIL:
-<br>
-{{ user.email }}
-</div>
-</div>
-
-{% comment %} Buttons {% endcomment %}
-<div class="button-wrapper flex flex-column flex-center">
-<a class="profile-cta"
-href="{% url 'user_change' %}"
-rel="noopener"
-target="_self"
-aria-label="this link sends you to the help page">EDIT INFO</a>
-<a class="profile-cta"
-href="{% url 'user_delete' %}"
-rel="noopener"
-target="_self"
-aria-label="this link sends you to the help page">DELETE ACCOUNT</a>
-</div>
-
-</section>
+    <section class="section profile-section flex flex-center flex-column">
+        {% if messages %}
+            <ul id="messages" class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% comment %} User greeter {% endcomment %}
+        <div class="container flex flex-center flex-column">
+            {% if user.is_authenticated %}
+                <div class="column flex flex-center">
+                    {% if 'placeholder' in user.image.url %}
+                        <img class="profile-image"
+                             src="https://shorturl.at/gpvGN"
+                             alt="default image">
+                    {% else %}
+                        <img class="profile-image" src="{{ user.image.url }}" alt="profile image">
+                    {% endif %}
+                {% endif %}
+                {% if user.first_name and user.last_name %}
+                </div>
+                <p class="profile-greeter">
+                    Hello <strong>{{ user.first_name }} {{ user.last_name }},</strong>
+                    <br>
+                    this is your user info:
+                </p>
+                {% else %}
+                <p class="profile-greeter">
+                    Hello <strong>{{ user.email }},</strong>
+                    <br>
+                    this is your user info:
+                </p>
+                {% endif %}
+                <p class="profile-greeter">Hello, this is your user info:</p>
+        </div>
+        {% comment %} User info {% endcomment %}
+        <div class="info-wrapper flex flex-row flex-between">
+            {% if user.username %}
+                <div class="profile-info">
+                    USERNAME:
+                    <br>
+                    {{ user.username }}
+                </div>
+            {% else %}
+                <div class="profile-info">
+                    USERNAME:
+                    <br>
+                    <p>Please consider choosing a username.</p>
+                </div>
+            {% endif %}
+            {% if user.first_name and user.last_name %}
+                <div class="profile-info">
+                    FIRST NAME, LAST NAME:
+                    <br>
+                    {{ user.first_name }} {{ user.last_name }}
+                </div>
+            {% else %}
+                <div class="profile-info">
+                    FIRST NAME, LAST NAME:
+                    <br>
+                    <p>
+                        Please consider telling us your name.
+                        <br>
+                        We prefer to call by your name.
+                    </p>
+                </div>
+            {% endif %}
+            <div class="profile-info">
+                EMAIL:
+                <br>
+                {{ user.email }}
+            </div>
+        </div>
+        {% comment %} Buttons {% endcomment %}
+        <div class="button-wrapper flex flex-column flex-center">
+            <a class="profile-cta"
+               href="{% url 'user_change' %}"
+               rel="noopener"
+               target="_self"
+               aria-label="this link sends you to the help page">EDIT INFO</a>
+            <a class="profile-cta"
+               href="{% url 'user_delete' %}"
+               rel="noopener"
+               target="_self"
+               aria-label="this link sends you to the help page">DELETE ACCOUNT</a>
+        </div>
+    </section>
 {% endblock content %}
