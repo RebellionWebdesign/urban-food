@@ -18,8 +18,10 @@ class UserProfileReview(LoginRequiredMixin, DetailView):
     
     def get(self, request):
         reviews = Review.objects.filter(author=request.user).order_by('-created_on')
+        review_count = reviews.count()
         context = {
-            "reviews":reviews
+            "reviews":reviews,
+            "review_count":review_count,
         }
         return render(request, 'review/my_reviews.html', context)
     
