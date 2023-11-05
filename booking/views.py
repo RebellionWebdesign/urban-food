@@ -48,9 +48,7 @@ class NewBooking(LoginRequiredMixin, View):
             new_booking.save()
             messages.add_message(request, messages.INFO,
                                  'Booking saved!')
-            return render(request,
-                            'booking/my_bookings.html',
-                            {"bookings":bookings})
+            return redirect('user_bookings')
     
 class DeleteBooking(LoginRequiredMixin, View):
     def get(self, request, pk):
