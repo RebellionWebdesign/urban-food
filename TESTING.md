@@ -129,6 +129,40 @@ Manual tests were made by myself, friends and family and CI community members.
 <img src="docs/images/testing-images/pep8/booking-views.png" ><br>
 </details>
 
+#### PYTHON CODE FOR REVIEW
+
+<details>
+  <summary>REVIEW FORMS</summary>
+<img src="docs/images/testing-images/pep8/review-forms.png" ><br>
+</details>
+
+<details>
+  <summary>REVIEW MODELS</summary>
+<img src="docs/images/testing-images/pep8/review-models.png" ><br>
+</details>
+
+<details>
+  <summary>REVIEW URLS</summary>
+<img src="docs/images/testing-images/pep8/review-urls.png" ><br>
+</details>
+
+<details>
+  <summary>REVIEW VIEW</summary>
+<img src="docs/images/testing-images/pep8/review-urls.png" ><br>
+</details>
+
+#### PYTHON CODE FOR HOME
+
+<details>
+  <summary>HOME VIEW</summary>
+<img src="docs/images/testing-images/pep8/home-views.png" ><br>
+</details>
+
+<details>
+  <summary>HOME URLS</summary>
+<img src="docs/images/testing-images/pep8/home-urls.png" ><br>
+</details>
+
 ### NU HTML CHECKER
 
 #### HOMEPAGE
