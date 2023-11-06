@@ -65,11 +65,13 @@ Create a website for the fictive Urban Food restaurant which useful for the user
 
 ### STRUCTURE
 
+The structure of the website is fairly simple. It has Sign up and Log in buttons and only the pages it needs to function. A flowchart is not provided now.
+
 ### SKELETON
 
 #### Wireframes
 
-Wireframes can be accessed in the [docs folder](https://github.com/RebellionWebdesign/urban-food/tree/a952f5ba09719a2e3fe9fb40b3c961918578334b/docs)
+Wireframes can be accessed in the [docs folder](docs/images/readme-images/wireframes/homepage)
 
 ### DATABASE
 The Urban Food project uses a postgresql database for data storage. This is the final schema:
@@ -107,7 +109,13 @@ The fonts used on this website are [Poppins](https://fonts.google.com/specimen/P
 
 Visual effects are sparsingly used in this project. However, there are some:
 
+- Button hover effects
+- The user navigation gets hidden if the user is not logged in
+- The navigation menu is designed as a fly out from the right side
+
 ## AGILE METHODOLOGY
+
+The use of agile tools can be seen [in the project tab](https://github.com/users/RebellionWebdesign/projects/5) 
 
 ## FEATURES
 
@@ -119,8 +127,13 @@ Visual effects are sparsingly used in this project. However, there are some:
 - Users can create reviews, edit the reviews and delete the reviews
 - Users can create bookings, but not delete or edit them. This is a business decision (see overview for details)
 - Admin can do all of the above
+- One feature that did not make it is the separate staff area. However, this is considered a can have feature because the functionality is there in the admin panel under "Bokings". The app and its model are still in the code to fulfill feature completeness in the future.
 
 ### FUTURE FEATURE CONSIDERATIONS
+
+- Finish the staff area page
+- Add a menu app so the user can directly order a meal upon booking and see what is on the card
+- Refine the booking number calculation
 
 ## TOOLS USED
 
@@ -146,13 +159,46 @@ Visual effects are sparsingly used in this project. However, there are some:
 
 ## TESTING
 
+For testing results. please refer to [TESTING.md](TESTING.md)
+
 ## DEPLOYMENT
 
 ### DEPLOY ON HEROKU
 
-### FORK THE REPOSITORY
+- Log in to your heroku account
 
-### CLONE THE REPOSITORY
+- Click on "Settings" and then on "Reveal config vars"
+
+<details>
+  <summary>Heroku Config Vars</summary>
+<img src="docs/images/readme-images/heroku-config-vars.png" ><br>
+</details>
+
+- Set your config variables
+- Click on the "Deploy" tab and connect your github repo, be sure to follow the prompts.
+
+<details>
+  <summary>Heroku Github</summary>
+<img src="docs/images/readme-images/heroku-connect-git.png" ><br>
+</details>
+- Click on "Deploy Branch" at the bottom of the page.
+
+<details>
+  <summary>Heroku Deploy</summary>
+<img src="docs/images/readme-images/heroku-deploy.png" ><br>
+</details>
+
+- Heroku will deploy the project now.
+
+### DEPLOY ON A LOCAL MACHINE (Windows)
+
+- Fork the repository from [GitHub](https://github.com/RebellionWebdesign/urban-food)
+- Create a venv with python -> `python -m venv venv`
+- Activate the venv -> `venv/Scripts/activate`
+- Install requirements with pip ->  `pip install -r requirements.txt`
+- Check settings.py for the environment variables
+- Add your values to the settings.py file (dont forget to create a database of your own beforehand)
+- Run the development server with python -> python manage.py runserver
 
 ## CREDITS
 
@@ -164,3 +210,6 @@ Visual effects are sparsingly used in this project. However, there are some:
 - Some of the reviews were submitted by friends and family.
 
 ## ACKNOWLEDGEMENTS
+
+- Thanks to my mentor for being awesome
+- Thanks to my family for keeping up with me
