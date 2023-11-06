@@ -22,7 +22,7 @@
           <br>
           <strong>THIS CAN NOT BE UNDONE!</strong>
         </p>
-        <form action="" method="post">
+        <form method="post">
           {% csrf_token %}
           <input class="profile-cta" type="submit" value="YES, DELETE USER">
           <a href="{% url 'user_profile' %}"
