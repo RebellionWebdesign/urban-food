@@ -641,12 +641,13 @@ input[type=submit]:hover {
 /* USER UPDATE STYLES */
 .update {
     width: 100vw;
+    min-height: 100vh;
     padding-top: 8vh;
     background-color: var(--color-dark-lighter);
 }
 
 .update-container {
-    width: 85vw;
+    width: 100%;
 }
 
 .update-marker {
@@ -658,6 +659,11 @@ input[type=submit]:hover {
     color: var(--color-light);
     font-family: 'poppins', sans-serif;
     margin-bottom: 5px;
+}
+
+.profile-update-form p {
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
 }
 
 .errorlist {
@@ -679,7 +685,65 @@ input[type=text] {
     padding-left: 10px;
 }
 
+label[for=id_image] {
+    display: block;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
+}
+
+label[for=id_username] {
+    display: block;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
+}
+
+#id_username {
+    width: 100%;
+}
+
+label[for=id_first_name] {
+    display: block;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
+}
+
+#id_first_name {
+    width: 100%;
+}
+
+label[for=id_last_name] {
+    display: block;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
+}
+
+#id_last_name {
+    width: 100%;
+}
+
+label[for=id_password] {
+    display: block;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    color: var(--color-light);
+}
+
+#id_password {
+    width: 100%;
+    background-color: var(--color-light);
+    font-family: 'poppins', sans-serif;
+}
+
 .helptext {
+    display: none;
+}
+
+.custom-helptext {
+    margin-top: 30px;
     color: var(--color-light);
     font-family: 'poppins', sans-serif;
     font-size: 12px;
@@ -691,7 +755,7 @@ input[type=text] {
     margin-bottom: 5px;
 }
 
-.password-link {
+.helptext a {
     color: var(--color-accent);
 }
 
@@ -1006,6 +1070,12 @@ label[for=id_email] {
     body {
         overflow-x: hidden;
         width: 100%;
+    }
+
+    #id_password {
+        width: 100%;
+        background-color: var(--color-light);
+        font-family: 'poppins', sans-serif;
     }
 
     .headerbar {
@@ -1911,6 +1981,12 @@ label[for=id_email] {
     .section {
         padding: 80px 20px;
         min-height: 100vh;
+    }
+
+    #id_password {
+        width: 100%;
+        background-color: var(--color-light);
+        font-family: 'poppins', sans-serif;
     }
 
     .container {
