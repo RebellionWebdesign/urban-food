@@ -149,7 +149,7 @@ To ensure responsiveness the website was tested on the devtools built into the b
 
 ## AUTOMATIC TESTING
 
-Automatic testing was omitted due to time constraints.
+- Automatic testing was omitted for this project.
 
 ## MANUAL TESTING
 
@@ -365,16 +365,16 @@ Manual tests were made by myself, friends and family and CI community members.
 
 ### USERS CANT CHANGE THEIR USER IMAGE
 
-- Due to an unresolved bug in the code users cannot change their user image at the moment. However, the code is functional except of this feature. Reason is that the image is not uploaded to cloudinary.
+- Due to an unresolved bug in the code users cannot change their user image at the moment. However, the code is functional except of this feature. Reason is that the image is not uploaded to cloudinary. However, the user user gets presented a default image for now.
 
-### SMALL GLITCH WITH FIREFOYX MOBILE
+### SMALL GLITCH WITH FIREFOX MOBILE
 
-- On firefox mobile the review cinatinaers dint take the css rule of `height: auto;`. The fix would be to check the correctness of the media query where the glitch happens. Omitted due to time constraint. The button works.
+- On firefox mobile the review cinatinaers dint take the css rule of `height: auto;`. The fix would be to check the correctness of the media query where the glitch happens. Omitted due to time constraint.
 
 ### TIME PICKER WORKS WITH MIN AND MAX TIMES, BUT DOES NOT DEACTIVATE THEM
 
 - The time picker on the bookings page is set to a min and max time. This works as expected, but for now the times which cannot be chosen arent deactivated. The user gets an notification about this.
 
-## FURTHER NOTES
+## FURTHER NOTES ON DATA VALIDATION
 
 - Input validation is handled completely by Django. The forms used in the application are django ModelForms injected with the `form.as_p` tag. The only exception is the user change form. The form is directly copied from the source code and changed to have the relevant html tags and classes.
