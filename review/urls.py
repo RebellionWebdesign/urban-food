@@ -3,7 +3,7 @@ from django.urls import path
 
 urlpatterns = [
     path('account/profile/reviews/', UserProfileReview.as_view(),
-         name = 'user_reviews'),
+         name='user_reviews'),
     path('account/profile/reviews/new_review/', NewReview.as_view(),
          name='new_review'),
     path('account/profile/reviews/delete_review/<int:pk>',

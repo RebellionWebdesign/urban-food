@@ -20,6 +20,7 @@ class ChangeForm(UserChangeForm):
         model = User
         fields = ("email",)
 
+
 class ChangeUserForm(UserChangeForm):
     """
     This is the form which is used to change the user data

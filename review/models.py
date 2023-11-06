@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from user.models import User
 
+
 class Review(models.Model):
     """
     This is the reviews model.

@@ -10,6 +10,7 @@ class BaseView(DetailView):
     """
     This view displays the user images on the reviews section.
     """
+
     def get(self, request):
         return render(request, 'base.html')
 
@@ -37,6 +38,7 @@ class DeleteUserView(LoginRequiredMixin, View):
     """
     This view displays deletes the user profile.
     """
+
     def get(self, request):
         return render(request, 'user/delete_user.html')
 
@@ -54,6 +56,7 @@ class ChangeUserView(LoginRequiredMixin, View):
     """
     This view displays is used to change user info.
     """
+
     def get(self, request):
         change_form = ChangeUserForm(instance=request.user)
 
@@ -67,5 +70,5 @@ class ChangeUserView(LoginRequiredMixin, View):
             if change_form.is_valid():
                 change_form.save()
                 messages.add_message(request, messages.INFO,
-                                 'Profile was changed!')
+                                     'Profile was changed!')
                 return redirect('user_profile')

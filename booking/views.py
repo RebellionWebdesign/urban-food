@@ -5,6 +5,7 @@ from django.views.generic import View
 from .models import Booking
 from .forms import NewBookingForm
 
+
 class BookingView(LoginRequiredMixin, View):
     """
     This view pulls all the user bookings from the database and displays
@@ -14,13 +15,14 @@ class BookingView(LoginRequiredMixin, View):
         bookings = Booking.objects.filter(email=request.user).order_by('-number')
         booking_count = bookings.count()
         context = {
-            "bookings" : bookings,
+            "bookings": bookings,
             "booking_count": booking_count,
         }
         return render(request, 'booking/my_bookings.html', context)
-    
+
     def get_object(self):
         return self.request.user
+
 
 class NewBooking(LoginRequiredMixin, View):
 
@@ -28,7 +30,7 @@ class NewBooking(LoginRequiredMixin, View):
         booking_form = NewBookingForm(request.POST, instance=request.user)
         return render(request, 'booking/new_booking.html',
                       {'form': booking_form})
-    
+
     def post(self, request):
         if request.method == 'POST':
             booking_form = NewBookingForm(data=request.POST,
@@ -41,17 +43,18 @@ class NewBooking(LoginRequiredMixin, View):
             email = self.request.user
             date = booking_form.cleaned_data['date']
             time = booking_form.cleaned_data['time']
-            new_booking = Booking(number = number,
-                                first_name = first_name,
-                                last_name = last_name,
-                                email = email,
-                                date = date,
-                                time = time,)
+            new_booking = Booking(number=number,
+                                  first_name=first_name,
+                                  last_name=last_name,
+                                  email=email,
+                                  date=date,
+                                  time=time,)
             new_booking.save()
             messages.add_message(request, messages.INFO,
                                  'Booking saved!')
             return redirect('user_bookings')
-    
+
+
 class DeleteBooking(LoginRequiredMixin, View):
     def get(self, request, pk):
         """Receive booking delete form"""
@@ -67,5 +70,5 @@ class DeleteBooking(LoginRequiredMixin, View):
         bookings = Booking.objects.filter(email=request.user).order_by('-number')
         booking.delete()
         messages.add_message(request, messages.INFO,
-                                 'Booking deleted!')
+                             'Booking deleted!')
         return redirect('user_bookings')

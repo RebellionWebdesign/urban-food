@@ -5,28 +5,32 @@ from django.views.generic import DetailView, View
 from .models import Review
 from .forms import NewReviewForm, EditReviewForm
 
+
 class ReviewView(DetailView):
 
     def get(self, request):
         reviews = Review.objects.all()
         context = {
-            "reviews" : reviews
+            "reviews": reviews
         }
         return render(request, 'user/profile.html', context)
 
+
 class UserProfileReview(LoginRequiredMixin, DetailView):
-    
+
     def get(self, request):
-        reviews = Review.objects.filter(author=request.user).order_by('-created_on')
+        reviews = Review.objects.filter(
+            author=request.user).order_by('-created_on')
         review_count = reviews.count()
         context = {
-            "reviews":reviews,
-            "review_count":review_count,
+            "reviews": reviews,
+            "review_count": review_count,
         }
         return render(request, 'review/my_reviews.html', context)
-    
+
     def get_object(self):
         return self.request.user
+
 
 class NewReview(LoginRequiredMixin, View):
 
@@ -34,23 +38,25 @@ class NewReview(LoginRequiredMixin, View):
         review_form = NewReviewForm(request.POST, instance=request.user)
 
         return render(request, 'review/new_review.html', {'form': review_form})
-    
+
     def post(self, request):
 
         if request.method == 'POST':
-            review_form = NewReviewForm(data=request.POST, instance=request.user)
+            review_form = NewReviewForm(
+                data=request.POST, instance=request.user)
             if review_form.is_valid():
                 author = request.user
                 review = review_form.cleaned_data['content']
                 rate = review_form.cleaned_data['rate']
-                new_review = Review(author = author,
-                                    content = review,
-                                    rate = rate)
+                new_review = Review(author=author,
+                                    content=review,
+                                    rate=rate)
                 new_review.save()
                 messages.add_message(request, messages.INFO,
-                                 'Review saved!')
+                                     'Review saved!')
         return redirect('user_reviews')
-    
+
+
 class DeleteReview(LoginRequiredMixin, View):
     def get(self, request, pk):
         """Receive review delete form"""
@@ -65,7 +71,7 @@ class DeleteReview(LoginRequiredMixin, View):
         review = get_object_or_404(Review, pk=pk)
         review.delete()
         messages.add_message(request, messages.INFO,
-                                 'Review deleted!')
+                             'Review deleted!')
         return redirect('user_reviews')
 
 
@@ -90,4 +96,3 @@ class UpdateReview(LoginRequiredMixin, View):
             messages.add_message(request, messages.INFO,
                                  'Review updated!')
         return redirect('user_reviews')
-    

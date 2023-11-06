@@ -6,6 +6,7 @@ class UserManager(BaseUserManager):
     Custom manager for the User model. Instead of the username field,
     the email field is used as the identifier.
     """
+
     def create_user(self, email, password, **extra_fields):
         """
         Creates and saves a user.

@@ -4,11 +4,13 @@ from cloudinary.models import CloudinaryField
 
 from .managers import UserManager
 
+
 class User(AbstractBaseUser, PermissionsMixin):
     """
     The User class is a custom class written for the project.
     """
-    image = CloudinaryField("image", null=True, blank=True, default="placeholder")
+    image = CloudinaryField(
+        "image", null=True, blank=True, default="placeholder")
     username = models.CharField(max_length=150, unique=True, null=True,
                                 blank=True)
     first_name = models.CharField(max_length=150, null=True, blank=True)
