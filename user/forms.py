@@ -25,6 +25,12 @@ class ChangeUserForm(UserChangeForm):
     """
     This is the form which is used to change the user data
     """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+    
+        self.fields['password'].widget.attrs['class'] = 'hide'
+
     class Meta:
         model = User
         fields = ('image', 'username', 'first_name', 'last_name')
