@@ -37,10 +37,10 @@
                         </p>
                         <div class="button-wrapper flex">
                             <div class="margin-l-top flex flex-wrap flex-between flex-center">
-                                <a id="{{ review.id }}" href="{% url 'update_review' pk=review.pk %}" class="delete-review-btn cta">UPDATE REVIEW</a>
+                                <a href="{% url 'update_review' pk=review.pk %}" class="delete-review-btn cta">UPDATE REVIEW</a>
                             </div>
                             <div class="margin-l-top flex flex-wrap flex-between flex-center">
-                                <a id="{{ review.id }}" href="{% url 'delete_review' pk=review.pk %}" class="delete-review-btn cta">DELETE REVIEW</a>
+                                <a href="{% url 'delete_review' pk=review.pk %}" class="delete-review-btn cta">DELETE REVIEW</a>
                             </div>
                         </div>
                     </div>
