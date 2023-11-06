@@ -18,7 +18,7 @@
         <p>Do you really want to delete the review?
             {{ user.last_name }} ?<br><strong>THIS CAN NOT BE UNDONE!</strong></p>
         
-        <form action="" method="post">
+        <form method="post">
             {% csrf_token %}
             <input class="delete-button" type="submit" value="YES, DELETE REVIEW">
         </form>
