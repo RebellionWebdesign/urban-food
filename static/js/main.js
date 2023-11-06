@@ -7,7 +7,7 @@ const navBar = document.getElementsByClassName("column-50-mobile")[0];
 
 mobileToggleOpen.addEventListener("click", () => {
     navBar.classList.remove("closed");
-  navBar.classList.add("open");
+    navBar.classList.add("open");
 });
 
 mobileToggleClose.addEventListener("click", () => {
@@ -18,7 +18,7 @@ mobileToggleClose.addEventListener("click", () => {
 /* This will remove the displayed messages after a certain time */
 setTimeout(() => {
     const message = document.getElementById("messages");
-    if ( message ) {
+    if (message) {
         message.style.display = 'none';
     }
 }, 3000);
