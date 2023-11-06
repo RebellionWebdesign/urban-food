@@ -52,52 +52,145 @@ To ensure responsiveness the website was tested on the devtools built into the b
 
 ## AUTOMATIC TESTING
 
+Automatic testing
+
 ## MANUAL TESTING
 
 Manual tests were made by myself, friends and family and CI community members.
 
  
 
-|             FEATURE              |               ACTION               |               EXPECTED RESULT               | TESTED | PASSED | COMMENT |
-| :------------------------------: | :--------------------------------: | :-----------------------------------------: | :----: | :----: | :-----: |
-|            Logo Link             |         click on logo link         |           sends user to homepage            |  yes   |  yes   |         |
-|            Home Link             |           click on link            |           sends user to home page           |  yes   |  yes   |         |
-|           Basics Link            |           click on link            |          sends user to basics page          |  yes   |  yes   |         |
-|          Materials Link          |           click on link            |        sends user to materials page         |  yes   |  yes   |         |
-|           Models Link            |           click on link            |          sends user to models page          |  yes   |  yes   |         |
-|            Help Link             |           click on link            |           sends user to help page           |  yes   |  yes   |         |
-|     Navigation Hover Effects     |    hover over navigation links     |     link changes color to accent color      |  yes   |  yes   |         |
-|            CTA Button            | click on button to skip to content |     sends user directly to basics page      |  yes   |  yes   |         |
-|     CTA Button Hover Effect      |         hover over button          |    button changes color to accent color     |  yes   |  yes   |         |
-| Contact Form First Name Validation      |     send form without First Name      | displays a warning because of empty field  |  yes   |  yes   |         |
-|  Contact Form Last Name Validation   |     send form without last name       | displays a warning because of empty field  |  yes   |  yes   |         |
-|     Contact Form eMail Validation      |     send form without email      | displays a warning because content isnt an email adress  |  yes   |  yes   |         |
-| Contact Form Button Hover Effect |       hover over form button       |    button changes color to accent color     |  yes   |  yes   |         |
-|   Contact Form Button Function   |  click button when form is filled  |         sends user to response page         |  yes   |  yes   |         |
-|   NEXT/BACK Button Hover Effect  |         hover over button          |    button changes color to accent color     |  yes   |  yes   |         |
-|     Content Page NEXT Button     |         click next button          |           sends user to next page           |  yes   |  yes   |         |
-|     Content Page BACK Button     |         click back button          |         sends user to previous page         |  yes   |  yes   |         |
-|    Content Page THANKS Button    |            click button            |           sends user to home page           |  yes   |  yes   |         |
-|          Response Page           |             just wait              | sends user back to homepage after 5 seconds |  yes   |  yes   |         |
-|           Social Icons           |             click icon             |      sends user to displayed platform       |  yes   |  yes   |         |
+|             FEATURE              |               ACTION               |               EXPECTED RESULT               | TESTED | PASSED |
+| :------------------------------: | :--------------------------------: | :-----------------------------------------: | :----: | :----: |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
+|         |        |                 |        |        |
 
 ## CODE VALIDATION
 
+#### PYTHON CODE FOR USER
 
+<details>
+  <summary>USER MODEL</summary>
+<img src="docs/images/testing-images/pep8/user-models.png" ><br>
+</details>
+
+<details>
+  <summary>USER FORMS</summary>
+<img src="docs/images/testing-images/pep8/user-forms.png" ><br>
+</details>
+
+<details>
+  <summary>USER MANAGER</summary>
+<img src="docs/images/testing-images/pep8/user-managers.png" ><br>
+</details>
+
+<details>
+  <summary>USER VIEW</summary>
+<img src="docs/images/testing-images/pep8/user-views.png" ><br>
+</details>
+
+<details>
+  <summary>USER URL</summary>
+<img src="docs/images/testing-images/pep8/user-urls.png" ><br>
+</details>
+
+#### PYTHON CODE FOR BOOKING
+
+<details>
+  <summary>BOOKING URL</summary>
+<img src="docs/images/testing-images/pep8/booking-urls.png" ><br>
+</details>
+
+<details>
+  <summary>BOOKING MODEL</summary>
+<img src="docs/images/testing-images/pep8/booking-models.png" ><br>
+</details>
+
+<details>
+  <summary>BOOKING VIEW</summary>
+<img src="docs/images/testing-images/pep8/booking-views.png" ><br>
+</details>
 
 ### NU HTML CHECKER
 
 #### HOMEPAGE
 
-The homepage was tested with  NU HTML checker. These are the results:
 <details>
-  <summary>NU HTML RESULTS</summary>
+  <summary>HOMEPAGE RESULTS</summary>
 <img src="docs/images/testing-images/html-testing/nu-html-landing-page.png" ><br>
+</details>
+
+#### PROFILE PAGES
+
+<details>
+  <summary>PROFILE OVERVIEW RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-html-profile-result.png" ><br>
+</details>
+
+<details>
+  <summary>CHANGE PROFILE RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-html-profile-result.png" ><br>
+</details>
+
+<details>
+  <summary>DELETE PROFILE RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-profile-delete-page.png" ><br>
+</details>
+
+#### BOOKING PAGES
+
+<details>
+  <summary>BOOKING OVERVIEW RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-my-bookings.png" ><br>
+</details>
+
+<details>
+  <summary>NEW BOOKING RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-new-booking.png" ><br>
+</details>
+
+<details>
+  <summary>DELETE BOOKING RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-delete-booking.png" ><br>
+</details>
+
+#### REVIEW PAGES
+
+<details>
+  <summary>REVIEW OVERVIEW RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-my-reviews.png" ><br>
+</details>
+
+<details>
+  <summary>DELETE REVIEW RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-delete-review.png" ><br>
+</details>
+
+<details>
+  <summary>NEW REVIEW RESULTS</summary>
+<img src="docs/images/testing-images/html-testing/nu-new-review.png" ><br>
 </details>
 
 ### JIGSAW CSS CHECKER
 
-The CSS was tested with JIGSAW CSS checker. These are the results:
 <details>
   <summary>JIGSAW RESULTS</summary>
 <img src="docs/images/testing-images/html-testing/jigsaw-css.png" ><br>
@@ -105,7 +198,6 @@ The CSS was tested with JIGSAW CSS checker. These are the results:
 
 ### WAVE ACCESSIBILITY CHECKER
 
-Accessibility was tested with WAVE. These are the results:
 <details>
   <summary>WAVE RESULTS</summary>
 <img src="docs/images/testing-images/html-testing/wave-result.png" ><br>
@@ -113,8 +205,15 @@ Accessibility was tested with WAVE. These are the results:
 
 ## LIGHTHOUSE REPORTS
 
-### LANDING PAGE
-### CONTENT PAGES
+<details>
+  <summary>LIGHTHOUSE DESKTOP</summary>
+<img src="docs/images/testing-images/html-testing/lighthouse-result-frontpage.png" ><br>
+</details>
+
+<details>
+  <summary>LIGHTHOUSE MOBILE</summary>
+<img src="docs/images/testing-images/html-testing/lighthouse-result-frontpage-mobile.png" ><br>
+</details>
 
 ## BUGS
 
