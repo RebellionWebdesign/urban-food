@@ -1,3 +1,4 @@
+from datetime import date
 from django.forms import ModelForm, DateInput, TimeInput
 from .models import Booking
 
@@ -9,10 +10,13 @@ class NewBookingForm(ModelForm):
     generated.
     """
     class Meta:
+        min = date.today()
         model = Booking
         fields = ['date', 'time']
         widgets = {
-            'date': DateInput(attrs={'class': 'datepicker', 'type': 'date'}),
+            'date': DateInput(attrs={'class': 'datepicker',
+                                     'type': 'date',
+                                     'min': min}),
             'time': TimeInput(attrs={'class': 'timepicker', 'min': '12:00',
                                      'max': '23:00', 'type': 'time'})
         }
