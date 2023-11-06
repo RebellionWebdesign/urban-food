@@ -1,117 +1,53 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% block content %}
-  {% comment %} User messages {% endcomment %}
-  {% if messages %}
-    <ul id="messages"  class="messages">
-      {% for message in messages %}
-        <li {% if message.tags %}class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  {% comment %} Change image {% endcomment %}
-  <section class="section update flex flex-center">
-    <div class="update-container flex flex-start flex-column">
-      {% if user.is_authenticated %}
-        <form method="post">
-          {% csrf_token %}
-          <tr>
-            <th>
-              <label class="update-labels" for="id_image">Your current Image:</label>
-            </th>
-            <td>
-              <div class="update-marker flex flex-center flex-between">
-                {% if 'placeholder' in user.image.url %}
-                  <img class="profile-image-delete"
-                       src="https://shorturl.at/gpvGN"
-                       alt="default image">
-                {% else %}
-                  <img class="profile-image"
-                       src="{{ user.image.url }}"
-                       alt="{{ user.username }}">
-                {% endif %}
-              </div>
-              <p class="update-marker update-labels margin-l-top">Change your Image:</p>
-              <input class="update-labels" type="file" name="image" id="id_image">
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <label class="flex flex-between margin-s-top margin-l-top update-labels"
-                     for="id_username">
-                {% comment %} Change user info {% endcomment %}
-                <div class="user-info-wrapper flex flex-column flex-center">
-                  <p>Change your Username:</p>
-                  <p>
-                    <i>( {{ user.username }} )</i>
-                  </p>
-                </label>
-              </th>
-              <td>
-                <input class="update-labels"
-                       type="text"
-                       name="username"
-                       maxlength="150"
-                       id="id_username">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label class="flex flex-between margin-s-top update-labels"
-                       for="id_first_name">
-                  <p>Change your First name:</p>
-                  <p>
-                    <i>( {{ user.first_name }} )</i>
-                  </p>
-                </label>
-              </td>
-              <td>
-                <ul class="errorlist">
-                  <li>This field is required.</li>
-                </ul>
-                <input type="text"
-                       name="first_name"
-                       maxlength="150"
-                       required
-                       id="id_first_name">
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <label class="flex flex-between margin-s-top update-labels"
-                       for="id_last_name">
-                  <p>Change your Last name:</p>
-                  <p>
-                    <i>( {{ user.last_name }} )</i>
-                  </p>
-                </label>
-              </th>
-              <td>
-                <ul class="errorlist">
-                  <li>This field is required.</li>
-                </ul>
-                <input type="text"
-                       name="last_name"
-                       maxlength="150"
-                       required
-                       id="id_last_name">
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <input class="profile-cta" type="submit" value="YES, CHANGE USER">
-                <a href="{% url 'user_profile' %}"
-                   class="profile-cta change-user flex flex-center">CANCEL</a>
-              </form>
-              <span class="helptext flex flex-center">
-                Please use
-                <a class="password-link" href="{% url 'account_change_password' %}">this form</a>
-                to perform a password change.
-              </span>
-            </th>
-          </tr>
-        </div>
-      {% endif %}
-    </div>
-  </section>
+{% if messages %}
+<ul id="messages"  class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+      {{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <section class="section user-review-section flex flex-center">
+        {% if user.is_authenticated %}
+            <div class="container flex flex-center flex-column">
+                <h1 class="review-greeter">
+                    Hey, {{ user.first_name }} {{ user.last_name }}!
+                    <br>
+                    Please update your profile data below:
+                </h1>
+                    <p class="update-review-prev margin-l-both">
+                      {% if 'placeholder' in user.image.url %}
+                      <img class="profile-image-delete"
+                           src="https://shorturl.at/gpvGN"
+                           alt="default image">
+                    {% else %}
+                      <img class="profile-image"
+                           src="{{ user.image.url }}"
+                           alt="{{ user.username }}">
+                    {% endif %}
+                    </p>
+                    <form class="profile-update-form flex flex-center flex-column"
+                            method="post">
+                        {% csrf_token %}
+                        {{ change_form.as_p }}
+                        <span class="custom-helptext flex flex-center">
+                          Please use
+                          <a class="password-link"
+                              href="{% url 'account_change_password' %}">
+                              this form</a>
+                          to perform a password change.
+                        </span>
+                        <input class="profile-cta margin-l-top" type="submit"
+                                value="YES, CHANGE USER">
+                        <a href="{% url 'user_profile' %}"
+                           class="profile-cta change-user flex flex-center">
+                           CANCEL
+                          </a>
+                    </form>
+            </div>
+        {% endif %}
+    </section>
 {% endblock content %}
