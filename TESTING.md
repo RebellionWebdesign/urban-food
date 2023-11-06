@@ -286,8 +286,47 @@ Manual tests were made by myself, friends and family and CI community members.
 
 <details>
   <summary>CHANGE PROFILE RESULTS</summary>
-<img src="docs/images/testing-images/html-testing/nu-html-profile-result.png" ><br>
+<img src="docs/images/testing-images/html-testing/nu-change-profile.png" ><br>
 </details>
+- The errors displayed in the W3C-HTML-Checker are due to the following:
+
+  - The form is imported from Django ModelForm, this means the errors do not stem from me but rather from Django itself.
+
+    The forms HTML is not directly editable due to this fact.
+
+  - ERROR 1: The div has the attribute "disabled" which isnt allowed. Adding a display:none rule doesnt help.
+
+  - ERROR 2: Actually no error. If we look at the source code for the page the beginning tag and the end tags for the p element are there,
+
+    but are misplaced:
+
+    The generated Django code:
+
+    ```html
+    <p><label for="id_password">Password:</label> <div class="hide" disabled id="id_password">
+    <strong>No password set.</strong>
+    </div> <span class="helptext">Raw passwords are not stored, so there is no way to see this user’s password, but you can change the password using <a href="../password/">this form</a>.</span></p>
+    ```
+
+    The fixed Django code:
+
+    ``````html
+    <p>
+        <label for="id_password">Password:</label>
+    		<div class="hide" disabled id="id_password">
+    			<strong>No password set.</strong>
+    		</div> 
+    		<span class="helptext">
+                Raw passwords are not stored, so there is no way to see this user’s password, but you can change the 
+                password using <a href="../password/">this form</a>.
+    		</span>
+    </p>
+    ``````
+
+    Please note the correct placing of the p tag.
+
+    - ERROR 3: This error is a follow up error from ERROR 2, removing the "hide" class results in exactly the same error.
+
 
 <details>
   <summary>DELETE PROFILE RESULTS</summary>
