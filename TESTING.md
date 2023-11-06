@@ -182,10 +182,11 @@ Manual tests were made by myself, friends and family and CI community members.
 |  Booking: save booking button  |           click            |         saves booking         |  YES   |        YES        |
 | Booking: cancel booking button |           click            | sends to back to booking page |  YES   |        YES        |
 | Booking: save booking button | click | saves new booking | YES | YES |
-| Booking: date picker |         pick date          |     date can not be in the past      |  YES   |        YES        |
+| Booking: date picker |         pick date          |         date can not be in the past         |  YES   |        YES        |
 | Booking: time picker | pick time | time must be between 12:00 and 23:00 | YES | PARTLY - see bugs |
 | Booking: back to top button | -- | should be hidden if bookings < 5 | YES | YES |
 | BUTTONS: Hover effects | hover over buttons | button changes color | YES | YES |
+| MESSAGES | write a new review | after saving success message gets displayed | YES | YES |
 
 ## CODE VALIDATION
 
@@ -373,3 +374,7 @@ Manual tests were made by myself, friends and family and CI community members.
 ### TIME PICKER WORKS WITH MIN AND MAX TIMES, BUT DOES NOT DEACTIVATE THEM
 
 - The time picker on the bookings page is set to a min and max time. This works as expected, but for now the times which cannot be chosen arent deactivated. The user gets an notification about this.
+
+## FURTHER NOTES
+
+- Input validation is handled completely by Django. The forms used in the application are django ModelForms injected with the `form.as_p` tag. The only exception is the user change form. The form is directly copied from the source code and changed to have the relevant html tags and classes.
