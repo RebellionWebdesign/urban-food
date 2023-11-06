@@ -223,6 +223,13 @@ Manual tests were made by myself, friends and family and CI community members.
 <img src="docs/images/testing-images/html-testing/nu-new-review.png" ><br>
 </details>
 
+### JSHINT JS CHECKER
+
+<details>
+  <summary>JSHINT RESULTS</summary>
+<img src="docs/images/testing-images/js/jshint-result.png" ><br>
+</details>
+
 ### JIGSAW CSS CHECKER
 
 <details>
